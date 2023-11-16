@@ -1,0 +1,22 @@
+{{template "base" .}}
+
+{{define "css"}}
+  <style>
+    html,
+    body {
+      height: 100%;
+    }
+  </style>
+{{end}}
+
+{{define "content"}}
+  <main class="flex items-center justify-center h-full min-h-full">
+    <section class="py-20">
+      <div class="container text-center">
+        <h1 class="font-bold min-[320px]:text-xl min-[375px]:text-2xl min-[414px]:text-3xl md:text-5xl lg:text-6xl xl-[1500px]:text-7xl]">Page Not <span class="text-[var(--secondary-color)]">Found.</span></h1>
+        <p class="py-8">Sorry! We couldn't find what you where looking for... Please Try again.</p>
+        <a class="block md:inline-block mb-4 md:mb-0 pl-4 md:px-4 py-2 bg-[var(--secondary-color)] text-white rounded border hover:bg-transparent hover:border-[var(--secondary-color)] hover:text-[var(--tertiary-color)] transition-all" href="/">Home</a>
+      </div>
+    </section>
+  </main>
+{{end}}

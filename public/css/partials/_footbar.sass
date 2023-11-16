@@ -1,0 +1,43 @@
+#site-navigation-footbar, .last-cta
+  nav div a, .call-now
+    position: relative
+    width: fit-content
+
+    &::after
+      content: ''
+      position: absolute
+      bottom: 5px
+      left: 0
+      width: 100%
+      height: 0.1em
+      background-color: var(--secondary-color)
+      opacity: 0
+      transition: opacity 300ms, transform 300ms
+
+    &:hover::after,
+    &:focus::after
+      opacity: 1
+      transform: translate3d(0, 0.2em, 0)
+
+    &::after
+      opacity: 1
+      transform: scale(0)
+      transform-origin: center
+
+    &:hover::after,
+    &:focus::after
+      transform: scale(1)
+
+  nav div a.active
+    position: relative
+
+    &::after
+      content: ''
+      position: absolute
+      bottom: 5px
+      left: 0
+      width: 100%
+      height: 0.1em
+      background-color: var(--secondary-color)
+      transition: opacity 300ms, transform 300ms
+      transform-origin: cente

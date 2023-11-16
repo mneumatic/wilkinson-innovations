@@ -1,0 +1,128 @@
+#site-navigation-navbar
+  z-index: 3
+
+  #site-navigation-navbar-toggle
+    &:checked ~ #site-navigation-navbar-nav-links
+      max-height: 500px
+
+    &:checked ~ #site-navigation-navbar-nav-links div
+      width: 100%
+      margin-left: 0
+
+
+    &:checked ~ #site-navigation-navbar-nav-links a.active,
+    &:checked ~ #site-navigation-navbar-nav-links a:hover
+      text-decoration: none
+      background-color: var(--secondary-color)
+      color: var(--primary-color)
+      transition: background-color 300ms, color 300ms
+
+      &::after
+        background-color: transparent !important
+        transform: scale(0)
+
+    &:checked ~ #site-navigation-navbar-nav-links > div a
+      display: block
+      color: var(--secondary-color)
+      background-color: transparent
+
+    &:checked ~ label span
+      background-color: transparent !important
+
+    &:checked ~ label span::before
+      transform: rotate(-45deg)
+      top:0
+
+    &:checked ~ label span::after
+      transform: rotate(45deg)
+      top:0
+
+  label
+    cursor: pointer
+    float: right
+    padding: 40px 0 40px 20px
+
+    span
+      background-color: var(--tertiary-color)
+      border-radius: 0.25rem
+      display: block
+      height: 3px
+      position: relative
+      width: 32px
+
+      &::before,
+      &::after
+        background-color: var(--tertiary-color)
+        border-radius: 0.25rem
+        content: ''
+        display: block
+        height: 100%
+        position: absolute
+        transition: all .3s ease-out
+        width: 100%
+
+
+      &::before
+        top: 10px
+
+      &::after
+        top: -10px
+
+  #site-navigation-navbar-nav-links
+    transition: max-height .5s ease-in-out
+
+    nav div a
+      position: relative
+
+      &::after
+        content: ''
+        position: absolute
+        bottom: 5px
+        left: 0
+        width: 100%
+        height: 0.1em
+        background-color: var(--secondary-color)
+        opacity: 0
+        transition: opacity 300ms, transform 300ms
+
+      &:hover::after,
+      &:focus::after
+        opacity: 1
+        transform: translate3d(0, 0.2em, 0)
+
+      &::after
+        opacity: 1
+        transform: scale(0)
+        transform-origin: center
+
+      &:hover::after,
+      &:focus::after
+        transform: scale(1)
+
+    nav div a.active
+      position: relative
+
+      &::after
+        content: ''
+        position: absolute
+        bottom: 5px
+        left: 0
+        width: 100%
+        height: 0.1em
+        background-color: var(--secondary-color)
+        transition: opacity 300ms, transform 300ms
+        transform-origin: center
+        transform: scale(1)
+
+    @media (min-width: 768px)
+      .contact.active
+        background-color: var(--primary-color) !important
+        border-color: var(--secondary-color) !important
+        color: var(--tertiary-color) !important
+
+        &::after
+          transform: scale(0)
+        
+
+    nav > a
+      text-decoration: none !important

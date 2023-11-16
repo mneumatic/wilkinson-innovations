@@ -1,0 +1,194 @@
+\:root
+  --primary-color: #fff
+  --secondary-color: #00AEEE
+  --tertiary-color: #333
+
+*
+  box-sizing: border-box
+
+html
+  font-size: 1em
+  line-height: 1.4
+
+
+body
+  background-color: var(--primary-color)
+  font-family: 'Open Sans', sans-serif
+  color: var(--tertiary-color)
+  margin: 0
+  padding: 0
+  overflow-x: hidden !important
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+
+::-moz-selection
+  background: #b3d4fc
+  text-shadow: none
+
+::selection
+  background: #b3d4fc
+  text-shadow: none
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video
+  vertical-align: middle
+
+textarea
+  resize: vertical
+
+.sr-only
+  border: 0
+  clip: rect(0, 0, 0, 0)
+  height: 1px
+  margin: -1px
+  overflow: hidden
+  padding: 0
+  position: absolute
+  white-space: nowrap
+  width: 1px
+
+.sr-only.focusable:active,
+.sr-only.focusable:focus
+  clip: auto
+  height: auto
+  margin: 0
+  overflow: visible
+  position: static
+  white-space: inherit
+  width: auto
+
+.img-fluid
+  height: auto !important
+  max-width: 100% !important
+
+#hero
+  // background-color: var(--primary-color)
+  background-image: url("/public/img/hero-placeholder.webp")
+  background-repeat: no-repeat
+  background-size: cover
+  background-position: center
+  // height: 100vh
+
+#about
+  // background-image: url("/public/img/section-2-bg.png")
+  background-repeat: no-repeat
+  background-position: top
+  background-size: contain
+
+  @media only screen and (min-width: 48rem)
+    background-position: left
+
+#what-we-do
+    background-image: url("/public/img/section-3-bg.png")
+    background-attachment: fixed
+    background-repeat: no-repeat
+    background-size: cover
+    background-position: center
+
+    #what-we-do-features
+      ul
+        li
+          &:hover
+            span
+              max-height: 100px
+
+          &::before
+            content: "\2022"
+            color: var(--secondary-color)
+            font-weight: bolder
+            display: inline-block
+            width: 24px
+
+    .active-list-item
+      --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)
+      --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color)
+      box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)
+      filter: blur(0) !important
+      padding: 2.5rem 2.5rem 4.5rem 2.5rem !important
+      margin: .5rem 0 !important
+      opacity: 0.75 !important
+      z-index: 50 !important
+      font-weight: bold
+
+    .active-list-item span
+      max-height: 100px
+
+.brand-logo
+  background: linear-gradient(to right, #00AEEE, #333)
+  -webkit-background-clip: text
+  -webkit-text-fill-color: transparent
+
+.active
+  position: relative
+
+  &::after
+    content: ''
+    position: absolute
+    bottom: 5px
+    left: 0
+    width: 100%
+    height: 0.1em
+    background-color: var(--secondary-color)
+    transition: opacity 300ms, transform 300ms
+    transform-origin: center
+    transform: scale(1)
+
+.no-js
+  #what-we-do-features
+      ul
+        li
+          filter: blur(0) !important
+  button
+    display: none
+
+
+.read-more-state
+  display: none
+
+.read-more-state:checked ~ .read-more-wrap .read-more-heading
+  color: var(--secondary-color)
+
+
+.read-more-target
+  opacity: 0
+  max-height: 0
+  font-size: 0
+  transition: opacity 1s ease-in-out
+
+.read-more-state:checked ~ .read-more-wrap .read-more-target
+  opacity: 1
+  font-size: inherit
+  max-height: 999em
+
+.read-more-state ~ .read-more-trigger:before 
+  content: 'Details'
+
+.read-more-state:checked ~ .read-more-trigger:before
+  content: 'Close'
+
+.testimonial-btns button
+  &:hover
+    background-color: #fff
+
+  &:hover svg
+    fill: var(--tertiary-color)
+
+.active-dot
+  background-color: #717171 !important
+
+
+/* Fading animation */
+.fade
+  animation-name: fade
+  animation-duration: 1.5s
+
+
+@keyframes fade 
+  from 
+    opacity: .4
+  to 
+    opacity: 1

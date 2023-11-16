@@ -1,0 +1,47 @@
+{{template "base" .}}
+
+{{define "content"}}
+  <main>
+    <section class="py-20">
+
+      <header class="text-center pb-16">
+          <h2 class="text-center font-bold min-[320px]:text-xl min-[375px]:text-2xl text-3xl md:text-5xl lg:text-6xl">Contact Us</h2>
+          <p class="container md:w-1/2 pt-8"><span class="text-[var(--secondary-color)]">Have Questions?</span> Email us with any questions you may have in how we can assist you and your clinics’ needs with our carts. </p>
+      </header>
+
+      <div class="container flex flex-col md:grid grid-cols-2">
+
+        <div class="mb-8 md:mb-0">
+            <img src="/public/img/product-img.png" alt="">
+        </div>
+
+        <div>
+            <form action="/" method="POST">
+                <input type="hidden" name="csrf_token" value="{{.CSRFToken}}">
+                <div class="flex flex-col">
+                    <label>
+                        <input type="text" class="p-2 mb-2 rounded border w-full md:w-1/2" name="name" placeholder="Name">
+                    </label>
+                
+                    <label></label>
+                        <input type="text" class="p-2 mb-2 rounded border w-full md:w-1/2" name="company" placeholder="Company">
+                    </label>
+                
+                    <label>
+                        <input type="email" class="p-2 mb-2 rounded border w-full md:w-1/2" name="email" placeholder="Email Address">
+                    </label>
+                
+                    <label>
+                        <input type="text" class="p-2 mb-2 rounded border w-full md:w-1/2" name="phone" placeholder="Telephone">
+                    </label>
+                        
+                    <textarea name="message" class="p-2 mb-3 rounded border w-full" cols="30" rows="10" placeholder="Message"></textarea>
+                    <button type="submit" class="w-full md:w-[100px] inline-block mb-4 md:mb-0 p-4 md:px-4 py-2 bg-[var(--secondary-color)] text-white rounded border hover:bg-transparent hover:border-[var(--secondary-color)] hover:text-[var(--tertiary-color)] transition-all" >Submit</button>
+                </div>
+                
+            </form>
+        </div>
+      </div>
+    </section>
+  </main>
+{{end}}

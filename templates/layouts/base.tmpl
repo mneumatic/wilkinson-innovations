@@ -1,0 +1,158 @@
+{{define "base"}}
+	<!DOCTYPE html>
+	<html lang="en">
+		<head>
+			<meta charset="UTF-8">
+      <title>{{.Title}}</title>
+			<meta http-equiv="X-UA-Compatible" content="IE=edge">
+			<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,300&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="public/css/vendor/normalize.min.css">
+      <link rel="stylesheet" type="text/css" href="https://unpkg.com/notie/dist/notie.min.css">
+      <link rel="stylesheet" type="text/css" href="/public/css/main.min.css">
+			
+      <style>
+        .notie-container {
+          font-size: 1em;
+          z-index: 9;
+        }
+      </style>
+
+			{{block "css" .}}{{end}}
+
+      {{ if not .Production }}
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+          tailwind.config = {
+            content: [
+              './templates/*.html',
+              './public/js/*.js'
+            ],
+            theme: {
+                extend: {
+                container: {
+                    center: true,
+                    padding: {
+                    DEFAULT: '1rem',
+                    md: '0'
+                  }
+                }
+              }
+            },
+            plugins: []
+          }
+        </script>
+      {{end}}
+		</head>
+		<body>
+			<header id="site-navigation-navbar" class="fixed flex items-center h-16 w-full transition-shadow" style="background-color: var(--primary-color)">
+        <div class="container flex items-center justify-between md:justify-start">
+    
+          <a href="/" class="brand-logo flex flex-row items-center" aria-label="Wilkinson Innovations">
+            <svg class="mr-4" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" clip-rule="evenodd" height="32" viewBox="0 0 938 734"><g id="wi-icon"><clipPath id="_clip1"><path id="w" d="M164.163,55.412l100.302,677.55l-160.4,-0l-100.302,-677.55l160.4,0Zm305.07,340.158l49.658,337.392l-160.52,-0l-49.658,-337.392l160.52,-0Zm209.314,-340.158l100.302,677.55l-160.399,-0l-100.302,-677.55l160.399,0Z"/></clipPath><g clip-path="url(#_clip1)"><path fill="var(--secondary-color)" d="M.998 52.647H781.615V735.7270000000001H.998z"/></g><g id="i" ><clipPath id="_clip2"><path id="bottom" d="M935.735,292.119l-116.152,0l-33.654,-240.599l116.152,0l33.654,240.599Z"/></clipPath><g clip-path="url(#_clip2)"><path fill="var(--secondary-color)" d="M783.164 48.755H938.5V294.885H783.164z"/></g><clipPath id="_clip3"><path id="top" d="M899.783,34.927l-116.151,0l-5.527,-33.186l116.152,0l5.526,33.186Z"/></clipPath><g clip-path="url(#_clip3)"><path fill="#f3342f" d="M775.34-1.024H902.549V37.693H775.34z"/></g></g></g></svg>
+            <span class="font-bold min-[320px]:text-base min-[375px]:text-xl min-[413px]:text-2xl whitespace-nowrap">Wilkinson Innovations</span>
+          </a>
+    
+          <input id="site-navigation-navbar-toggle" class="hidden" type="checkbox">
+          <label for="site-navigation-navbar-toggle" class="cursor-pointer md:hidden"><span></span></label>
+    
+          <div id="site-navigation-navbar-nav-links" class="max-h-0 md:max-h-full overflow-hidden absolute md:relative top-16 md:top-0 left-0 flex md:items-center md:justify-between m-0 md:ml-6 w-full shadow-lg md:shadow-none" style="background-color: var(--primary-color);">
+            <nav class="block md:flex items-center justify-between w-full">
+              <div>
+                <a href="/#features" class="features block md:inline-block mb-1 md:mb-0 pl-4 md:px-4 py-2">Features</a>
+                <a href="/about" class='about block md:inline-block mb-1 md:mb-0 pl-4 md:px-4 py-2 {{if eq .Title "About | Wilkinson Innovations"}}active{{end}}'>About</a>
+              </div>
+              <a href="/contact" class='contact block md:inline-block mb-4 md:mb-0 pl-4 md:px-4 py-2 md:rounded md:border md:bg-[var(--secondary-color)] md:text-white md:hover:fill-[var()] md:hover:bg-transparent md:hover:text-[var(--tertiary-color)] hover:border-[var(--secondary-color)] transition-all {{if eq .Title "Contact Us | Wilkinson Innovations"}}active{{end}}'>Contact</a>
+            </nav>
+          </div>
+        </div>
+      </header>
+
+			{{block "content" .}}{{end}}
+
+			<footer id="site-navigation-footbar" class="pt-20">
+        <div class="container flex">
+          <div class="flex flex-col md:grid grid-cols-2 grid-flow-col">
+            <nav class="">
+              <a href="/" class="brand-logo flex flex-row items-center w-min" aria-label="Wilkinson Innovations">
+                <svg class="mr-4" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" clip-rule="evenodd" height="32" viewBox="0 0 938 734"><g id="wi-icon"><clipPath id="_clip1"><path id="w" d="M164.163,55.412l100.302,677.55l-160.4,-0l-100.302,-677.55l160.4,0Zm305.07,340.158l49.658,337.392l-160.52,-0l-49.658,-337.392l160.52,-0Zm209.314,-340.158l100.302,677.55l-160.399,-0l-100.302,-677.55l160.399,0Z"/></clipPath><g clip-path="url(#_clip1)"><path fill="var(--secondary-color)" d="M.998 52.647H781.615V735.7270000000001H.998z"/></g><g id="i" ><clipPath id="_clip2"><path id="bottom" d="M935.735,292.119l-116.152,0l-33.654,-240.599l116.152,0l33.654,240.599Z"/></clipPath><g clip-path="url(#_clip2)"><path fill="var(--secondary-color)" d="M783.164 48.755H938.5V294.885H783.164z"/></g><clipPath id="_clip3"><path id="top" d="M899.783,34.927l-116.151,0l-5.527,-33.186l116.152,0l5.526,33.186Z"/></clipPath><g clip-path="url(#_clip3)"><path fill="#f3342f" d="M775.34-1.024H902.549V37.693H775.34z"/></g></g></g></svg>
+                <span class="font-bold min-[320px]:text-base min-[375px]:text-xl min-[413px]:text-2xl whitespace-nowrap">Wilkinson Innovations</span>
+              </a>
+              <!-- <span class="fs-4 text-decoration-underline" style="text-underline-position: under; text-decoration-thickness: 3px; text-decoration-color: var(--cyan-process)">Wilkinson Innovations</span> -->
+              <div class="p-3 pt-4 text-xs md:w-3/4">
+                  <h3 class="font-bold">Quality you Can Trust</h3>
+                  <p class="py-2"><span class="text-[var(--secondary-color)]">Sourced and built all in the U.S.A.</span> by a team of experienced Bioengineers and Biotechnicians. All of our parts come from the U.S.A and all of our carts are engineered, designed, and assembled in the U.S.A too. No shortcuts here, we believe in our country and in building our products to the best standards possible.</p>
+                  <p><span class="text-[var(--secondary-color)]">We pay attention</span> to the necessary details and have designed this All-In-One cart to cater to the desires from those asking on the clinical floor. Whether it be your hardworking Biotechnicians, long standing Nurses, or on the go Physicians, the All-In-One cart serves their every need.</p>
+              </div>
+          </nav>
+          <div class="flex flex-col md:grid grid-cols-3 pt-1">
+            <nav class="flex flex-col w-fit">
+                <span class="font-bold">Website</span>
+                <div class="p-3 text-xs">
+                    <a class="block py-2" href="/">Home</a>
+                    <a class="block py-2" href="/#features">Features</a>
+                    <a class="block py-2" href="/about">About</a>
+                    <a class="block py-2" href="/contact">Contact</a>
+                    <a class="block py-2" href="/privacy-policy">Privacy Policy</a>
+                    <a class="block py-2" href="/terms-of-service">Terms of Service</a>
+                </div>
+            </nav>
+            <nav class="flex flex-col w-fit">
+                <span class="font-bold">Newsletter</span>
+                <div class="p-3">
+                    <div class="grid grid-flow-col-dense mb-4 text-xs">
+                        <svg class="mr-2" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" clip-rule="evenodd" width="36" height="36" viewBox="0 0 88 88"><g id="mail-icon"><circle cx="43.705" cy="42.346" r="42.346" fill="#00aeee"/><path fill="#fff" fill-rule="nonzero" d="M17.98,22.674l0,39.344l51.449,-0l0,-39.344l-51.449,0Zm25.707,23.658l-20.871,-20.631l41.826,-0l-20.955,20.631Zm-8.29,-3.938l-14.39,14.17l-0,-28.397l14.39,14.227Zm2.152,2.128l6.131,6.062l6.041,-5.95l14.527,14.357l-41.392,0l14.693,-14.469Zm14.33,-2.01l14.524,-14.299l-0,28.651l-14.524,-14.352Z"/></g></svg>
+                        <span class="col-10 fs-12">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
+                    </div>
+    
+                    <form action="/mailling-list" method="POST">
+                      <input type="hidden" name="csrf_token" value="{{.CSRFToken}}">
+                        <div class="flex flex-col text-xs">
+                          <label>
+                              <input type="text" class="p-2 mb-2 rounded border" name="name" placeholder="Name">
+                          </label>
+                          <label class="form-label">
+                              <input type="email" class="p-2 mb-2 rounded border" name="email" placeholder="Email Address">
+                          </label>
+                          <button type="submit" class="block md:inline-block mb-4 md:mb-0 pl-4 md:px-4 py-2 bg-[var(--secondary-color)] text-white rounded border hover:bg-transparent hover:border-[var(--secondary-color)] hover:text-[var(--tertiary-color)] transition-all" style="width: 100px;">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </nav>
+            <nav class="flex flex-col w-fit">
+                <span class="font-bold">Contact Us</span>
+                <div class="p-3 text-xs">
+                    <div class="flex">
+                        <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo nemo rem voluptatibus!</span>
+                    </div>
+                    <div class="flex items-center pt-4">
+                        <svg class="mr-3" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="var(--cyan-process)" viewBox="0 0 16 16"><path fill-rule="evenodd" d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/><path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/></svg>
+                        <address class="m-0">9999 Street City, State, Zip</address>
+                    </div>
+                    <div class="flex items-center py-4">
+                        <svg class="mr-3" xmlns="http://www.w3.org/2000/svg" width="24" height="24" xml:space="preserve" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" clip-rule="evenodd" viewBox="0 0 88 88"><path fill="#00aeee" fill-rule="nonzero" d="M42.346,0c3.887,0 7.637,0.503 11.248,1.509c3.612,1.007 6.989,2.426 10.132,4.26c3.143,1.833 6.003,4.039 8.581,6.616c2.577,2.578 4.783,5.438 6.616,8.581c1.834,3.143 3.253,6.52 4.26,10.132c1.006,3.611 1.509,7.361 1.509,11.248c0,3.887 -0.503,7.637 -1.509,11.248c-1.007,3.612 -2.426,6.989 -4.26,10.132c-1.833,3.143 -4.039,6.003 -6.616,8.581c-2.578,2.577 -5.438,4.783 -8.581,6.616c-3.143,1.834 -6.52,3.253 -10.132,4.26c-3.611,1.006 -7.361,1.509 -11.248,1.509c-3.887,0 -7.637,-0.503 -11.248,-1.509c-3.612,-1.007 -6.989,-2.426 -10.132,-4.26c-3.143,-1.833 -6.003,-4.039 -8.581,-6.616c-2.577,-2.578 -4.783,-5.438 -6.616,-8.581c-1.834,-3.143 -3.253,-6.513 -4.26,-10.111c-1.006,-3.598 -1.509,-7.354 -1.509,-11.269c-0,-3.887 0.503,-7.637 1.509,-11.248c1.007,-3.612 2.426,-6.989 4.26,-10.132c1.833,-3.143 4.039,-6.003 6.616,-8.581c2.578,-2.577 5.438,-4.783 8.581,-6.616c3.143,-1.834 6.513,-3.253 10.111,-4.26c3.598,-1.006 7.354,-1.509 11.269,-1.509Zm0,79.399c3.391,-0 6.665,-0.441 9.821,-1.324c3.157,-0.882 6.107,-2.129 8.85,-3.742c2.743,-1.613 5.245,-3.55 7.506,-5.81c2.26,-2.261 4.197,-4.763 5.81,-7.506c1.613,-2.743 2.86,-5.686 3.742,-8.829c0.883,-3.143 1.324,-6.423 1.324,-9.842c-0,-3.391 -0.441,-6.665 -1.324,-9.821c-0.882,-3.157 -2.129,-6.107 -3.742,-8.85c-1.613,-2.743 -3.55,-5.245 -5.81,-7.506c-2.261,-2.26 -4.763,-4.197 -7.506,-5.81c-2.743,-1.613 -5.693,-2.86 -8.85,-3.742c-3.156,-0.883 -6.43,-1.324 -9.821,-1.324c-3.391,0 -6.665,0.441 -9.821,1.324c-3.157,0.882 -6.107,2.129 -8.85,3.742c-2.743,1.613 -5.245,3.55 -7.506,5.81c-2.26,2.261 -4.197,4.763 -5.81,7.506c-1.613,2.743 -2.86,5.693 -3.742,8.85c-0.883,3.156 -1.324,6.43 -1.324,9.821c0,3.391 0.441,6.665 1.324,9.821c0.882,3.157 2.129,6.107 3.742,8.85c1.613,2.743 3.55,5.245 5.81,7.506c2.261,2.26 4.763,4.197 7.506,5.81c2.743,1.613 5.686,2.86 8.829,3.742c3.143,0.883 6.423,1.324 9.842,1.324Zm24.688,-36.391l1.985,-5.955l3.102,-0l-3.515,10.586l-3.102,0l-1.985,-5.955l-1.985,5.955l-3.101,0l-3.516,-10.586l3.102,-0l1.985,5.955l1.985,-5.955l3.06,-0l1.985,5.955Zm-19.188,-5.955l3.102,-0l-3.516,10.586l-3.101,0l-1.985,-5.955l-1.985,5.955l-3.101,0l-3.516,-10.586l3.102,-0l1.985,5.955l1.985,-5.955l3.06,-0l1.985,5.955l1.985,-5.955Zm-21.173,-0l3.102,-0l-3.516,10.586l-3.101,0l-1.985,-5.955l-1.985,5.955l-3.101,0l-3.516,-10.586l3.102,-0l1.985,5.955l1.985,-5.955l3.06,-0l1.985,5.955l1.985,-5.955Z"/></svg>
+                        <a class="block py-2" href="#">www.wilkinsoninnovations.com</a>
+                    </div>
+                    <div class="flex items-center pb-4">
+                        <svg class="mr-3" xmlns="http://www.w3.org/2000/svg" width="24" height="24" xml:space="preserve" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round" clip-rule="evenodd" viewBox="0 0 96 96"><path id="call-icon" fill="none" fill-rule="nonzero" stroke="#00aeee" stroke-width="6.07" d="M56.525,20.354c8.068,1.574 14.41,7.916 15.985,15.985m-15.985,-32.172c16.854,1.872 30.278,15.28 32.172,32.131m-4.047,32.294l0,12.14c0,0.011 0,0.022 0,0.033c0,4.44 -3.654,8.094 -8.094,8.094c-0.243,-0 -0.486,-0.011 -0.728,-0.033c-12.452,-1.353 -24.415,-5.609 -34.924,-12.424c-9.777,-6.213 -18.068,-14.503 -24.281,-24.281c-6.839,-10.556 -11.095,-22.577 -12.423,-35.085c-0.022,-0.243 -0.033,-0.486 -0.033,-0.729c-0,-4.437 3.649,-8.089 8.086,-8.094l12.14,0c4.044,-0.039 7.528,2.957 8.094,6.961c0.512,3.885 1.462,7.7 2.832,11.372c1.11,2.952 0.397,6.295 -1.821,8.538l-5.139,5.14c5.76,10.13 14.15,18.52 24.281,24.281l5.139,-5.14c2.243,-2.218 5.586,-2.931 8.539,-1.821c3.672,1.37 7.486,2.32 11.372,2.833c4.049,0.571 7.061,4.126 6.96,8.215Z"/></svg>
+                        <a class="block py-2" href="tel:1951499-9971" title="Call Now">1-(951)-499-9971</a>
+                    </div>
+                </div>
+            </nav>
+            </div>
+          </div>
+        </div>
+        <div class="border-t text-xs text-center py-3">
+            <span class="text-muted">Copyright © 2023 Wilkinson Innovations. All Rights Reserved.</span>
+        </div>
+      </footer>
+
+      <script src="https://unpkg.com/notie"></script> 
+      <script type="module" src="/public/js/plugins.js"></script>
+      <script type="module" src="/public/js/main.js"></script>
+			{{block "js" .}}{{end}}
+		</body>
+	</html>
+{{end}}
