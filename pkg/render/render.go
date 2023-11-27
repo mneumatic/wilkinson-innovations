@@ -22,7 +22,7 @@ func AddDefaultData(td *models.Template, r *http.Request) *models.Template {
 	td.CSRFToken = nosurf.Token(r)
 	return td
 }
- 
+
 func RenderTemplate(w http.ResponseWriter, r *http.Request, tmpl string, td *models.Template) {
 	var tc map[string]*template.Template
 
@@ -94,7 +94,7 @@ func CreateTemplateCache() (map[string]*template.Template, error) {
 				return cache, err
 			}
 		}
-		
+
 		cache[name] = ts
 	}
 
