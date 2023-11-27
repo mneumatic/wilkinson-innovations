@@ -28,11 +28,11 @@ func NewHandlers(r *Repository) {
 }
 
 func (m *Repository) Home(w http.ResponseWriter, r *http.Request) {
-	render.RenderTemplate(w, r, "index.tmpl", &models.Template{
-		Title: "Wilkinson Innovations",
+	render.RenderTemplate(w, r, "index.gohtml", &models.Template{
+		Title:      "Wilkinson Innovations",
 		Production: m.App.Production,
-		Other: m.App.Testimonials,
-		Products: m.App.Products,
+		Other:      m.App.Testimonials,
+		Products:   m.App.Products,
 	})
 }
 
@@ -44,10 +44,10 @@ func (m *Repository) PostHome(w http.ResponseWriter, r *http.Request) {
 		Phone   string
 		Message string
 	}{
-		Name: r.FormValue("name"),
+		Name:    r.FormValue("name"),
 		Company: r.FormValue("company"),
-		Email: r.FormValue("email"),
-		Phone: r.FormValue("phone"),
+		Email:   r.FormValue("email"),
+		Phone:   r.FormValue("phone"),
 		Message: r.FormValue("message"),
 	}
 
@@ -56,15 +56,15 @@ func (m *Repository) PostHome(w http.ResponseWriter, r *http.Request) {
 }
 
 func (m *Repository) About(w http.ResponseWriter, r *http.Request) {
-	render.RenderTemplate(w, r, "about.tmpl", &models.Template{
-		Title: "About | Wilkinson Innovations",
+	render.RenderTemplate(w, r, "about.gohtml", &models.Template{
+		Title:      "About | Wilkinson Innovations",
 		Production: m.App.Production,
 	})
 }
 
 func (m *Repository) Contact(w http.ResponseWriter, r *http.Request) {
-	render.RenderTemplate(w, r, "contact.tmpl", &models.Template{
-		Title: "Contact Us | Wilkinson Innovations",
+	render.RenderTemplate(w, r, "contact.gohtml", &models.Template{
+		Title:      "Contact Us | Wilkinson Innovations",
 		Production: m.App.Production,
 	})
 }
@@ -77,10 +77,10 @@ func (m *Repository) PostContact(w http.ResponseWriter, r *http.Request) {
 		Phone   string
 		Message string
 	}{
-		Name: r.FormValue("name"),
+		Name:    r.FormValue("name"),
 		Company: r.FormValue("company"),
-		Email: r.FormValue("email"),
-		Phone: r.FormValue("phone"),
+		Email:   r.FormValue("email"),
+		Phone:   r.FormValue("phone"),
 		Message: r.FormValue("message"),
 	}
 
@@ -90,10 +90,10 @@ func (m *Repository) PostContact(w http.ResponseWriter, r *http.Request) {
 
 func (m *Repository) PostFootbar(w http.ResponseWriter, r *http.Request) {
 	formDetails := struct {
-		Name    string
-		Email   string
+		Name  string
+		Email string
 	}{
-		Name: r.FormValue("name"),
+		Name:  r.FormValue("name"),
 		Email: r.FormValue("email"),
 	}
 
@@ -102,15 +102,15 @@ func (m *Repository) PostFootbar(w http.ResponseWriter, r *http.Request) {
 }
 
 func (m *Repository) PrivacyPolicy(w http.ResponseWriter, r *http.Request) {
-	render.RenderTemplate(w, r, "privacy-policy.tmpl", &models.Template{
-		Title: "Privacy Policy | Wilkinson Innovations",
+	render.RenderTemplate(w, r, "privacy-policy.gohtml", &models.Template{
+		Title:      "Privacy Policy | Wilkinson Innovations",
 		Production: m.App.Production,
 	})
 }
 
 func (m *Repository) TermsOfService(w http.ResponseWriter, r *http.Request) {
-	render.RenderTemplate(w, r, "terms-of-service.tmpl", &models.Template{
-		Title: "Terms of Service | Wilkinson Innovations",
+	render.RenderTemplate(w, r, "terms-of-service.gohtml", &models.Template{
+		Title:      "Terms of Service | Wilkinson Innovations",
 		Production: m.App.Production,
 	})
 }

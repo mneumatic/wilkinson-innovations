@@ -28,16 +28,16 @@ func routes(app *configs.AppConfig) http.Handler {
 
 	//  CHI NotFound & MethodNotAllowed ERROR HANDLING
 	mux.NotFound(func(w http.ResponseWriter, r *http.Request) {
-		render.RenderTemplate(w, r, "error.tmpl", &models.Template{
-			Title: "Page Not Found | Wilkinson Innovations",
+		render.RenderTemplate(w, r, "error.gohtml", &models.Template{
+			Title:      "Page Not Found | Wilkinson Innovations",
 			Production: app.Production,
 		})
 		w.WriteHeader(404)
 	})
 
 	mux.MethodNotAllowed(func(w http.ResponseWriter, r *http.Request) {
-		render.RenderTemplate(w, r, "error.tmpl", &models.Template{
-			Title: "Page Not Found | Wilkinson Innovations",
+		render.RenderTemplate(w, r, "error.gohtml", &models.Template{
+			Title:      "Page Not Found | Wilkinson Innovations",
 			Production: app.Production,
 		})
 		w.WriteHeader(405)
