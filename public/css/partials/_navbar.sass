@@ -71,7 +71,7 @@
   #site-navigation-navbar-nav-links
     transition: max-height .5s ease-in-out
 
-    nav a
+    nav div a
       position: relative
 
       &::after
@@ -99,7 +99,7 @@
       &:focus::after
         transform: scale(1)
 
-    nav a.active
+    nav div a.active
       position: relative
 
       &::after
@@ -115,13 +115,13 @@
         transform: scale(1)
 
     @media (min-width: 768px)
-      //.contact.active
-      //  background-color: var(--primary-color) !important
-      //  border-color: var(--secondary-color) !important
-      //  color: var(--tertiary-color) !important
-      //
-      //  &::after
-      //    transform: scale(0)
+      .contact.active
+        background-color: var(--primary-color) !important
+        border-color: var(--secondary-color) !important
+        color: var(--tertiary-color) !important
+
+        &::after
+          transform: scale(0)
         
 
     nav > a
