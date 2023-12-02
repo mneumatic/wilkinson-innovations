@@ -9,9 +9,9 @@
             cursor: pointer;
             transition: 0.3s;
         }
-        
+
         #gallery img:hover {opacity: 0.7;}
-        
+
         /* The Modal (background) */
         #image-viewer {
             display: none;
@@ -32,12 +32,12 @@
             width: 80%;
             max-width: 700px;
         }
-        .modal-content { 
+        .modal-content {
             animation-name: zoom;
             animation-duration: 0.6s;
         }
         @keyframes zoom {
-            from {transform:scale(0)} 
+            from {transform:scale(0)}
             to {transform:scale(1)}
         }
         #image-viewer .close {
@@ -55,7 +55,7 @@
             text-decoration: none;
             cursor: pointer;
         }
-        
+
         @media only screen and (max-width: 700px){
             .modal-content {
                 width: 100%;
@@ -67,205 +67,176 @@
 {{define "content"}}
   <main>
     <section id="hero" class="relative py-20">
-        <div class="container flex flex-col md:grid grid-cols-2">
-            <div class="flex items-center justify-center">
-                <img src="/public/img/product-img.png" alt="Medical Cart">
-            </div>
-            <div class="py-16 text-center lg:text-start">
-                <h1 class="font-bold min-[320px]:text-xl min-[375px]:text-2xl min-[414px]:text-3xl md:text-5xl lg:text-6xl xl-[1500px]:text-7xl]">Strive for the Best.<span class="block">Continue to <span class="text-[var(--secondary-color)]">Innovate.</span></span></h1>
-                <span class="font-light italic">That’s our path. That’s our mission for you.</span>
-                <p class="py-16 text-3xl text-start font-light">Introducting the <strong class="text-[var(--secondary-color)]">All-In-One Deluxe Dialysis Medical Cart.</strong> We have engineered one of the most reliable, affordable, high quality medical dailysis carts on the market.</p>
-                <button class="inline-block mb-4 md:mb-0 px-4 py-2 bg-[var(--secondary-color)] text-white rounded border hover:bg-transparent hover:border-[var(--secondary-color)] hover:text-[var(--tertiary-color)] transition-all" onclick="learnMore()">Learn More</button>
-            </div>
+      <div class="container flex flex-col md:grid grid-cols-2">
+        <div class="flex items-center justify-center">
+          <img src="/public/img/product-img.png" alt="Medical Cart">
         </div>
+        <div class="py-16 text-center lg:text-start">
+          <h1 class="font-bold min-[320px]:text-xl min-[375px]:text-2xl min-[414px]:text-3xl md:text-5xl lg:text-6xl xl-[1500px]:text-7xl]">Strive for the Best.<span class="block">Continue to <span class="text-[var(--secondary-color)]">Innovate.</span></span></h1>
+          <span class="font-light italic">That’s our path. That’s our mission for you.</span>
+          <p class="py-16 text-3xl text-start font-light">Introducting the <strong class="text-[var(--secondary-color)]">All-In-One Deluxe Dialysis Medical Cart.</strong> We have engineered one of the most reliable, affordable, high quality medical dailysis carts on the market.</p>
+          <button class="inline-block mb-4 md:mb-0 px-4 py-2 bg-[var(--secondary-color)] text-white rounded border hover:bg-transparent hover:border-[var(--secondary-color)] hover:text-[var(--tertiary-color)] transition-all" onclick="learnMore()">Learn More</button>
+        </div>
+      </div>
     </section>
-
     <section id="features" class="py-20">
-
-        <header class="text-center">
-            <h2 class="text-center font-bold min-[320px]:text-xl min-[375px]:text-2xl text-3xl md:text-5xl lg:text-6xl">All-In-<span class="text-[var(--secondary-color)]">One</span></h2>
-            <p class="container md:w-1/2 pt-8 pb-16text-start"><strong class="font-bold text-[var(--secondary-color)]">Sourced and built all in the U.S.A.</strong> by a team of experienced Bioengineers and Biotechnicians. All of our parts come from the U.S.A and all of our carts are engineered, designed, and assembled in the U.S.A too. No shortcuts here, we believe in our country and in building our products to the best standards possible.</p>
-        </header>
-
-        <div class="container flex flex-col md:grid grid-cols-3 gap-4 items-start py-16">
-            <div class="feature-card flex flex-col rounded bg-gray-100 w-full">
-                <div class="relative bg-[var(--secondary-color)] rounded-t w-full h-full">
-                    <div class="flex items-center justify-start text-white py-9 px-4">
-                        <svg class="mr-3" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" clip-rule="evenodd" width="64" height="64" viewBox="0 0 71 75"><path id="chat-icon" fill="#fff" d="M31.884,53.312c0,-8.733 8.091,-15.812 18.071,-15.812c9.979,0 18.07,7.079 18.07,15.812c0,3.975 -1.68,7.612 -4.447,10.39c0.217,2.295 0.939,4.812 1.739,6.7c0.178,0.42 -0.165,0.89 -0.617,0.818c-5.096,-0.836 -8.125,-2.119 -9.444,-2.788c-1.729,0.462 -3.512,0.694 -5.301,0.692c-9.98,-0 -18.071,-7.08 -18.071,-15.812Zm9.035,2.259c1.24,-0 2.259,-1.02 2.259,-2.259c0,-1.239 -1.019,-2.259 -2.259,-2.259c-1.239,-0 -2.258,1.02 -2.258,2.259c-0,1.239 1.019,2.259 2.258,2.259Zm15.812,-2.259c0,1.239 1.02,2.259 2.259,2.259c1.239,-0 2.259,-1.02 2.259,-2.259c-0,-1.239 -1.02,-2.259 -2.259,-2.259c-1.239,-0 -2.259,1.02 -2.259,2.259Zm-9.035,-0c-0,1.239 1.02,2.259 2.259,2.259c1.239,-0 2.259,-1.02 2.259,-2.259c-0,-1.239 -1.02,-2.259 -2.259,-2.259c-1.239,-0 -2.259,1.02 -2.259,2.259Zm-17.434,5.833c0.034,0.135 -0.001,0.278 -0.093,0.381c-0.093,0.103 -0.231,0.154 -0.369,0.135c-1.506,-0.204 -3.617,-0.476 -4.887,-0.814c-2.167,1.095 -6.829,3.091 -14.45,4.604c-0.987,0.195 -1.978,0.375 -2.971,0.537c-0.833,0.134 -1.467,-0.733 -1.137,-1.508c0.369,-0.873 0.709,-1.758 1.016,-2.654l0.013,-0.042c1.033,-3 1.875,-6.45 2.183,-9.662c-5.112,-5.125 -8.208,-11.834 -8.208,-19.167c-0,-16.108 14.925,-29.167 33.333,-29.167c18.408,0 33.333,13.059 33.333,29.167c0,3.281 -0.619,6.435 -1.76,9.379c-0.052,0.13 -0.166,0.225 -0.303,0.253c-0.137,0.029 -0.28,-0.014 -0.379,-0.113c-0.725,-0.725 -2.129,-2.129 -2.627,-2.626c-0.11,-0.11 -0.149,-0.273 -0.102,-0.421c0.657,-2.082 1.005,-4.254 1.005,-6.472c-0,-13.3 -12.517,-25 -29.167,-25c-16.65,-0 -29.167,11.7 -29.167,25c0,6.117 2.571,11.792 6.992,16.225c0.875,0.878 1.314,2.103 1.196,3.337c-0.293,2.824 -0.848,5.613 -1.658,8.334c5.812,-1.346 9.362,-2.904 10.975,-3.721c0.914,-0.463 1.968,-0.573 2.958,-0.308c1.016,0.27 2.044,0.493 3.079,0.667c0.162,0.028 0.293,0.148 0.335,0.308c0.17,0.663 0.621,2.417 0.86,3.348Z"/></svg>
-                        <span class="text-4xl">Safety to your Staff</span>
-                    </div>
-                    <svg class="absolute" style="bottom: -14px; left: 25px" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" clip-rule="evenodd" width="18" height="18" viewBox="0 0 75 50"><path fill="var(--secondary-color)" d="M37.5,48.313l37.5,-48.313l-75,0l37.5,48.313Z"/></svg>
-                </div>
-                <div class="p-4">
-                    <input type="checkbox" class="read-more-state" id="safety" />
-
-                    <li class="read-more-wrap py-2"><span class="read-more-heading">Low center of mass</span><span class="read-more-target"> makes Pushing/Pulling easy. Keep unwanted back, neck, and wrist <span class="var(--secondary-color)">injury costs down</span> for your clinic by having your nurses use the All-In-One Dialysis Medical Cart at your site.</span></li>
-
-                    <li class="read-more-wrap py-2"><span class="read-more-heading">Ergonomically designed</span><span class="read-more-target"> for all heights of individuals.</span></li>
-                    
-                    <li class="read-more-wrap py-2"><span class="read-more-heading">Robust and modern sleek design</span><span class="read-more-target"> for tight quarters of movement.</span></li>
-                    
-                    <label for="safety" class="read-more-trigger cursor-pointer inline-block mt-2 px-4 py-2 bg-[var(--secondary-color)] text-white rounded border hover:bg-transparent hover:border-[var(--secondary-color)] hover:text-[var(--tertiary-color)] transition-all"></label>
-                </div>
+      <header class="text-center">
+          <h2 class="text-center font-bold min-[320px]:text-xl min-[375px]:text-2xl text-3xl md:text-5xl lg:text-6xl">All-In-<span class="text-[var(--secondary-color)]">One</span></h2>
+          <p class="container md:w-1/2 pt-8 pb-16text-start"><strong class="font-bold text-[var(--secondary-color)]">Sourced and built all in the U.S.A.</strong> by a team of experienced Bioengineers and Biotechnicians. All of our parts come from the U.S.A and all of our carts are engineered, designed, and assembled in the U.S.A too. No shortcuts here, we believe in our country and in building our products to the best standards possible.</p>
+      </header>
+      <div class="container flex flex-col md:grid grid-cols-3 gap-4 items-start py-16">
+        <div class="feature-card flex flex-col rounded bg-gray-100 w-full">
+          <div class="relative bg-[var(--secondary-color)] rounded-t w-full h-full">
+            <div class="flex items-center justify-start text-white py-9 px-4">
+              <svg class="mr-3" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" clip-rule="evenodd" width="64" height="64" viewBox="0 0 71 75"><path id="chat-icon" fill="#fff" d="M31.884,53.312c0,-8.733 8.091,-15.812 18.071,-15.812c9.979,0 18.07,7.079 18.07,15.812c0,3.975 -1.68,7.612 -4.447,10.39c0.217,2.295 0.939,4.812 1.739,6.7c0.178,0.42 -0.165,0.89 -0.617,0.818c-5.096,-0.836 -8.125,-2.119 -9.444,-2.788c-1.729,0.462 -3.512,0.694 -5.301,0.692c-9.98,-0 -18.071,-7.08 -18.071,-15.812Zm9.035,2.259c1.24,-0 2.259,-1.02 2.259,-2.259c0,-1.239 -1.019,-2.259 -2.259,-2.259c-1.239,-0 -2.258,1.02 -2.258,2.259c-0,1.239 1.019,2.259 2.258,2.259Zm15.812,-2.259c0,1.239 1.02,2.259 2.259,2.259c1.239,-0 2.259,-1.02 2.259,-2.259c-0,-1.239 -1.02,-2.259 -2.259,-2.259c-1.239,-0 -2.259,1.02 -2.259,2.259Zm-9.035,-0c-0,1.239 1.02,2.259 2.259,2.259c1.239,-0 2.259,-1.02 2.259,-2.259c-0,-1.239 -1.02,-2.259 -2.259,-2.259c-1.239,-0 -2.259,1.02 -2.259,2.259Zm-17.434,5.833c0.034,0.135 -0.001,0.278 -0.093,0.381c-0.093,0.103 -0.231,0.154 -0.369,0.135c-1.506,-0.204 -3.617,-0.476 -4.887,-0.814c-2.167,1.095 -6.829,3.091 -14.45,4.604c-0.987,0.195 -1.978,0.375 -2.971,0.537c-0.833,0.134 -1.467,-0.733 -1.137,-1.508c0.369,-0.873 0.709,-1.758 1.016,-2.654l0.013,-0.042c1.033,-3 1.875,-6.45 2.183,-9.662c-5.112,-5.125 -8.208,-11.834 -8.208,-19.167c-0,-16.108 14.925,-29.167 33.333,-29.167c18.408,0 33.333,13.059 33.333,29.167c0,3.281 -0.619,6.435 -1.76,9.379c-0.052,0.13 -0.166,0.225 -0.303,0.253c-0.137,0.029 -0.28,-0.014 -0.379,-0.113c-0.725,-0.725 -2.129,-2.129 -2.627,-2.626c-0.11,-0.11 -0.149,-0.273 -0.102,-0.421c0.657,-2.082 1.005,-4.254 1.005,-6.472c-0,-13.3 -12.517,-25 -29.167,-25c-16.65,-0 -29.167,11.7 -29.167,25c0,6.117 2.571,11.792 6.992,16.225c0.875,0.878 1.314,2.103 1.196,3.337c-0.293,2.824 -0.848,5.613 -1.658,8.334c5.812,-1.346 9.362,-2.904 10.975,-3.721c0.914,-0.463 1.968,-0.573 2.958,-0.308c1.016,0.27 2.044,0.493 3.079,0.667c0.162,0.028 0.293,0.148 0.335,0.308c0.17,0.663 0.621,2.417 0.86,3.348Z"/></svg>
+              <span class="text-4xl">Safety to your Staff</span>
             </div>
-
-            <div class="feature-card flex flex-col rounded bg-gray-100 w-full">
-                <div class="relative bg-[var(--secondary-color)] rounded-t w-full">
-                    <div class="flex items-center justify-start text-white py-9 px-4">
-                        <svg class="mr-3" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" clip-rule="evenodd" width="64" height="64" viewBox="0 0 71 75"><path id="chat-icon" fill="#fff" d="M31.884,53.312c0,-8.733 8.091,-15.812 18.071,-15.812c9.979,0 18.07,7.079 18.07,15.812c0,3.975 -1.68,7.612 -4.447,10.39c0.217,2.295 0.939,4.812 1.739,6.7c0.178,0.42 -0.165,0.89 -0.617,0.818c-5.096,-0.836 -8.125,-2.119 -9.444,-2.788c-1.729,0.462 -3.512,0.694 -5.301,0.692c-9.98,-0 -18.071,-7.08 -18.071,-15.812Zm9.035,2.259c1.24,-0 2.259,-1.02 2.259,-2.259c0,-1.239 -1.019,-2.259 -2.259,-2.259c-1.239,-0 -2.258,1.02 -2.258,2.259c-0,1.239 1.019,2.259 2.258,2.259Zm15.812,-2.259c0,1.239 1.02,2.259 2.259,2.259c1.239,-0 2.259,-1.02 2.259,-2.259c-0,-1.239 -1.02,-2.259 -2.259,-2.259c-1.239,-0 -2.259,1.02 -2.259,2.259Zm-9.035,-0c-0,1.239 1.02,2.259 2.259,2.259c1.239,-0 2.259,-1.02 2.259,-2.259c-0,-1.239 -1.02,-2.259 -2.259,-2.259c-1.239,-0 -2.259,1.02 -2.259,2.259Zm-17.434,5.833c0.034,0.135 -0.001,0.278 -0.093,0.381c-0.093,0.103 -0.231,0.154 -0.369,0.135c-1.506,-0.204 -3.617,-0.476 -4.887,-0.814c-2.167,1.095 -6.829,3.091 -14.45,4.604c-0.987,0.195 -1.978,0.375 -2.971,0.537c-0.833,0.134 -1.467,-0.733 -1.137,-1.508c0.369,-0.873 0.709,-1.758 1.016,-2.654l0.013,-0.042c1.033,-3 1.875,-6.45 2.183,-9.662c-5.112,-5.125 -8.208,-11.834 -8.208,-19.167c-0,-16.108 14.925,-29.167 33.333,-29.167c18.408,0 33.333,13.059 33.333,29.167c0,3.281 -0.619,6.435 -1.76,9.379c-0.052,0.13 -0.166,0.225 -0.303,0.253c-0.137,0.029 -0.28,-0.014 -0.379,-0.113c-0.725,-0.725 -2.129,-2.129 -2.627,-2.626c-0.11,-0.11 -0.149,-0.273 -0.102,-0.421c0.657,-2.082 1.005,-4.254 1.005,-6.472c-0,-13.3 -12.517,-25 -29.167,-25c-16.65,-0 -29.167,11.7 -29.167,25c0,6.117 2.571,11.792 6.992,16.225c0.875,0.878 1.314,2.103 1.196,3.337c-0.293,2.824 -0.848,5.613 -1.658,8.334c5.812,-1.346 9.362,-2.904 10.975,-3.721c0.914,-0.463 1.968,-0.573 2.958,-0.308c1.016,0.27 2.044,0.493 3.079,0.667c0.162,0.028 0.293,0.148 0.335,0.308c0.17,0.663 0.621,2.417 0.86,3.348Z"/></svg>
-                        <span class="text-4xl">Quality you Can Trust</span>
-                    </div>
-                    <svg class="absolute" style="bottom: -14px; left: 25px" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" clip-rule="evenodd" width="18" height="18" viewBox="0 0 75 50"><path fill="var(--secondary-color)" d="M37.5,48.313l37.5,-48.313l-75,0l37.5,48.313Z"/></svg>
-                </div>
-                <div class="p-4">
-                    <input type="checkbox" class="read-more-state" id="quality" />
-
-                    <li class="read-more-wrap py-2"><span class="read-more-heading">The All-In-One design</span><span class="read-more-target"> is a clean and aesthetically pleasing glossy, medical white powder coat finish throughout, to fit right into your clinic setting.</span></li>
-
-                    <li class="read-more-wrap py-2"><span class="read-more-heading">Sourced and built all in the U.S.A.</span><span class="read-more-target"> by a team of experienced Bioengineers and Biotechnicians. All of our parts come from the U.S.A and all of our carts are engineered, designed, and assembled in the U.S.A too. No shortcuts here, we believe in our country and in building our products to the best standards possible.</span></li>
-                    
-                    <li class="read-more-wrap py-2"><span class="read-more-heading">We pay attention</span><span class="read-more-target"> to the necessary details and have designed this All-In-One cart to cater to the desires from those asking on the clinical floor. Whether it be your hardworking Biotechnicians, long standing Nurses, or on the go Physicians, the All-In-One cart serves their every need.</span></li>
-                    
-                    <label for="quality" class="read-more-trigger cursor-pointer inline-block mt-2 px-4 py-2 bg-[var(--secondary-color)] text-white rounded border hover:bg-transparent hover:border-[var(--secondary-color)] hover:text-[var(--tertiary-color)] transition-all"></label>
-                </div>
-            </div>
-
-            <div class="feature-card flex flex-col rounded bg-gray-100 w-full">
-                <div class="relative bg-[var(--secondary-color)] rounded-t w-full">
-                    <div class="flex items-center justify-start text-white py-9 px-4">
-                        <svg class="mr-3" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" clip-rule="evenodd" width="64" height="64" viewBox="0 0 71 75"><path id="chat-icon" fill="#fff" d="M31.884,53.312c0,-8.733 8.091,-15.812 18.071,-15.812c9.979,0 18.07,7.079 18.07,15.812c0,3.975 -1.68,7.612 -4.447,10.39c0.217,2.295 0.939,4.812 1.739,6.7c0.178,0.42 -0.165,0.89 -0.617,0.818c-5.096,-0.836 -8.125,-2.119 -9.444,-2.788c-1.729,0.462 -3.512,0.694 -5.301,0.692c-9.98,-0 -18.071,-7.08 -18.071,-15.812Zm9.035,2.259c1.24,-0 2.259,-1.02 2.259,-2.259c0,-1.239 -1.019,-2.259 -2.259,-2.259c-1.239,-0 -2.258,1.02 -2.258,2.259c-0,1.239 1.019,2.259 2.258,2.259Zm15.812,-2.259c0,1.239 1.02,2.259 2.259,2.259c1.239,-0 2.259,-1.02 2.259,-2.259c-0,-1.239 -1.02,-2.259 -2.259,-2.259c-1.239,-0 -2.259,1.02 -2.259,2.259Zm-9.035,-0c-0,1.239 1.02,2.259 2.259,2.259c1.239,-0 2.259,-1.02 2.259,-2.259c-0,-1.239 -1.02,-2.259 -2.259,-2.259c-1.239,-0 -2.259,1.02 -2.259,2.259Zm-17.434,5.833c0.034,0.135 -0.001,0.278 -0.093,0.381c-0.093,0.103 -0.231,0.154 -0.369,0.135c-1.506,-0.204 -3.617,-0.476 -4.887,-0.814c-2.167,1.095 -6.829,3.091 -14.45,4.604c-0.987,0.195 -1.978,0.375 -2.971,0.537c-0.833,0.134 -1.467,-0.733 -1.137,-1.508c0.369,-0.873 0.709,-1.758 1.016,-2.654l0.013,-0.042c1.033,-3 1.875,-6.45 2.183,-9.662c-5.112,-5.125 -8.208,-11.834 -8.208,-19.167c-0,-16.108 14.925,-29.167 33.333,-29.167c18.408,0 33.333,13.059 33.333,29.167c0,3.281 -0.619,6.435 -1.76,9.379c-0.052,0.13 -0.166,0.225 -0.303,0.253c-0.137,0.029 -0.28,-0.014 -0.379,-0.113c-0.725,-0.725 -2.129,-2.129 -2.627,-2.626c-0.11,-0.11 -0.149,-0.273 -0.102,-0.421c0.657,-2.082 1.005,-4.254 1.005,-6.472c-0,-13.3 -12.517,-25 -29.167,-25c-16.65,-0 -29.167,11.7 -29.167,25c0,6.117 2.571,11.792 6.992,16.225c0.875,0.878 1.314,2.103 1.196,3.337c-0.293,2.824 -0.848,5.613 -1.658,8.334c5.812,-1.346 9.362,-2.904 10.975,-3.721c0.914,-0.463 1.968,-0.573 2.958,-0.308c1.016,0.27 2.044,0.493 3.079,0.667c0.162,0.028 0.293,0.148 0.335,0.308c0.17,0.663 0.621,2.417 0.86,3.348Z"/></svg>
-                        <span class="text-4xl">Ease of Use</span>
-                    </div>
-                    <svg class="absolute" style="bottom: -14px; left: 25px" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" clip-rule="evenodd" width="18" height="18" viewBox="0 0 75 50"><path fill="var(--secondary-color)" d="M37.5,48.313l37.5,-48.313l-75,0l37.5,48.313Z"/></svg>
-                </div>
-                <div class="p-4">
-                    <input type="checkbox" class="read-more-state" id="ease" />
-
-                    <li class="py-2 read-more-wrap"><span class="read-more-heading">Assessable removable features</span><span class="read-more-target"> that allows for easy cleaning and maintenance.</span></li>
-                    
-                    <li class="read-more-wrap py-2"><span class="read-more-heading">Easy and quick connecting water lines</span><span class="read-more-target"> with the quick disconnect fittings our carts come standard with.</span></li>
-
-                    <li class="read-more-wrap py-2"><span class="read-more-heading">Large table-top surface</span><span class="read-more-target"> for writing. Technicians, Nurses, and or Physicians can utilize this feature for jotting notes or placing items for working on equipment.</span></li>
-                    
-                    <label for="ease" class="read-more-trigger cursor-pointer mt-2 inline-block px-4 py-2 bg-[var(--secondary-color)] text-white rounded border hover:bg-transparent hover:border-[var(--secondary-color)] hover:text-[var(--tertiary-color)] transition-all"></label>
-                </div>
-            </div>
-
+            <svg class="absolute" style="bottom: -14px; left: 25px" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" clip-rule="evenodd" width="18" height="18" viewBox="0 0 75 50"><path fill="var(--secondary-color)" d="M37.5,48.313l37.5,-48.313l-75,0l37.5,48.313Z"/></svg>
+          </div>
+          <div class="p-4">
+            <input type="checkbox" class="read-more-state" id="safety" />
+            <li class="read-more-wrap py-2"><span class="read-more-heading">Low center of mass</span><span class="read-more-target"> makes Pushing/Pulling easy. Keep unwanted back, neck, and wrist <span class="var(--secondary-color)">injury costs down</span> for your clinic by having your nurses use the All-In-One Dialysis Medical Cart at your site.</span></li>
+            <li class="read-more-wrap py-2"><span class="read-more-heading">Ergonomically designed</span><span class="read-more-target"> for all heights of individuals.</span></li>
+            <li class="read-more-wrap py-2"><span class="read-more-heading">Robust and modern sleek design</span><span class="read-more-target"> for tight quarters of movement.</span></li>
+            <label for="safety" class="read-more-trigger cursor-pointer inline-block mt-2 px-4 py-2 bg-[var(--secondary-color)] text-white rounded border hover:bg-transparent hover:border-[var(--secondary-color)] hover:text-[var(--tertiary-color)] transition-all"></label>
+          </div>
         </div>
-
-        <div class="container flex flex-col md:grid grid-cols-5 gap-8 pb-16">
-            <div class="col-span-3">
-                <h3 class="font-bold min-[320px]:text-lg min-[375px]:text-xl text-2xl md:text-4xl lg:text-5xl">Robust and <span class="text-[var(--secondary-color)]">Modern Sleek Design</span></h3>
-                <p class="py-8">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto accusantium nisi ex quidem quia at quibusdam repellendus quo veniam deleniti magni laboriosam, impedit reprehenderit saepe molestias cupiditate numquam minus recusandae.</p>
-
-                <!-- TODO: Gallery -->
-                <div id="gallery" class="images hidden 2xl:flex" style="border: none !important">
-                    <img src="/public/img/product-img.png" alt="" width="300" height="200">
-                    <img src="/public/img/product-img-2.png" alt="" width="300" height="200">
-                    <img src="/public/img/product-img-3.png" alt="" width="300" height="200">
-                  </div>
-                    
-                  <div id="image-viewer">
-                    <span class="close">&times;</span>
-                    <img class="modal-content" id="full-image">
-                  </div>
+        <div class="feature-card flex flex-col rounded bg-gray-100 w-full">
+          <div class="relative bg-[var(--secondary-color)] rounded-t w-full">
+            <div class="flex items-center justify-start text-white py-9 px-4">
+              <svg class="mr-3" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" clip-rule="evenodd" width="64" height="64" viewBox="0 0 71 75"><path id="chat-icon" fill="#fff" d="M31.884,53.312c0,-8.733 8.091,-15.812 18.071,-15.812c9.979,0 18.07,7.079 18.07,15.812c0,3.975 -1.68,7.612 -4.447,10.39c0.217,2.295 0.939,4.812 1.739,6.7c0.178,0.42 -0.165,0.89 -0.617,0.818c-5.096,-0.836 -8.125,-2.119 -9.444,-2.788c-1.729,0.462 -3.512,0.694 -5.301,0.692c-9.98,-0 -18.071,-7.08 -18.071,-15.812Zm9.035,2.259c1.24,-0 2.259,-1.02 2.259,-2.259c0,-1.239 -1.019,-2.259 -2.259,-2.259c-1.239,-0 -2.258,1.02 -2.258,2.259c-0,1.239 1.019,2.259 2.258,2.259Zm15.812,-2.259c0,1.239 1.02,2.259 2.259,2.259c1.239,-0 2.259,-1.02 2.259,-2.259c-0,-1.239 -1.02,-2.259 -2.259,-2.259c-1.239,-0 -2.259,1.02 -2.259,2.259Zm-9.035,-0c-0,1.239 1.02,2.259 2.259,2.259c1.239,-0 2.259,-1.02 2.259,-2.259c-0,-1.239 -1.02,-2.259 -2.259,-2.259c-1.239,-0 -2.259,1.02 -2.259,2.259Zm-17.434,5.833c0.034,0.135 -0.001,0.278 -0.093,0.381c-0.093,0.103 -0.231,0.154 -0.369,0.135c-1.506,-0.204 -3.617,-0.476 -4.887,-0.814c-2.167,1.095 -6.829,3.091 -14.45,4.604c-0.987,0.195 -1.978,0.375 -2.971,0.537c-0.833,0.134 -1.467,-0.733 -1.137,-1.508c0.369,-0.873 0.709,-1.758 1.016,-2.654l0.013,-0.042c1.033,-3 1.875,-6.45 2.183,-9.662c-5.112,-5.125 -8.208,-11.834 -8.208,-19.167c-0,-16.108 14.925,-29.167 33.333,-29.167c18.408,0 33.333,13.059 33.333,29.167c0,3.281 -0.619,6.435 -1.76,9.379c-0.052,0.13 -0.166,0.225 -0.303,0.253c-0.137,0.029 -0.28,-0.014 -0.379,-0.113c-0.725,-0.725 -2.129,-2.129 -2.627,-2.626c-0.11,-0.11 -0.149,-0.273 -0.102,-0.421c0.657,-2.082 1.005,-4.254 1.005,-6.472c-0,-13.3 -12.517,-25 -29.167,-25c-16.65,-0 -29.167,11.7 -29.167,25c0,6.117 2.571,11.792 6.992,16.225c0.875,0.878 1.314,2.103 1.196,3.337c-0.293,2.824 -0.848,5.613 -1.658,8.334c5.812,-1.346 9.362,-2.904 10.975,-3.721c0.914,-0.463 1.968,-0.573 2.958,-0.308c1.016,0.27 2.044,0.493 3.079,0.667c0.162,0.028 0.293,0.148 0.335,0.308c0.17,0.663 0.621,2.417 0.86,3.348Z"/></svg>
+              <span class="text-4xl">Quality you Can Trust</span>
             </div>
-            <div class="col-span-2 pt-8 md:pt-0">
-                <div class="relative m-auto max-w-[1000px]">
-
-                    {{range .Products}}
-                        <div class="slide hidden fade">
-                            <span class="absolute top-0 right-0 text-[var(--secondary-color)] text-[12px] py-2 px-3">{{.Id}} / 3</span>
-                            <img class="w-full" src="/public/img/{{.ImgFile}}" alt="{{.Caption}}">
-                            <span class="absolute bottom-2 text-[var(--secondary-color)] text-xs sm:text-lg w-full text-center">{{.Caption}}</span>
-                        </div>
-                    {{end}}
-
-                    <button class="prev gallery-btn absolute top-2/4 w-auto p-4 -mt-6 bg-[var(--secondary-color)] border border-[var(--secondary-color)] text-white font-bold text-xs sm:text-lg transition-all rounded hover:bg-white hover:text-[var(--tertiary-color)]">❮</button>
-                    <button class="next gallery-btn absolute right-0 top-2/4 w-auto p-4 -mt-6 bg-[var(--secondary-color)] border border-[var(--secondary-color)] text-white font-bold text-xs sm:text-lg transition-all rounded hover:bg-white hover:text-[var(--tertiary-color)]">❯</button>
-                    
-                </div>
-                <div class="text-center">
-                    <span class="dot inline-block cursor-pointer h-4 w-4 mx-[2px] bg-[#bbb] rounded-full transition-all hover:bg-[#717171]"></span> 
-                    <span class="dot inline-block cursor-pointer h-4 w-4 mx-[2px] bg-[#bbb] rounded-full transition-all hover:bg-[#717171]"></span> 
-                    <span class="dot inline-block cursor-pointer h-4 w-4 mx-[2px] bg-[#bbb] rounded-full transition-all hover:bg-[#717171]"></span> 
-                </div>
-            </div>
+            <svg class="absolute" style="bottom: -14px; left: 25px" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" clip-rule="evenodd" width="18" height="18" viewBox="0 0 75 50"><path fill="var(--secondary-color)" d="M37.5,48.313l37.5,-48.313l-75,0l37.5,48.313Z"/></svg>
+          </div>
+          <div class="p-4">
+            <input type="checkbox" class="read-more-state" id="quality" />
+            <li class="read-more-wrap py-2"><span class="read-more-heading">The All-In-One design</span><span class="read-more-target"> is a clean and aesthetically pleasing glossy, medical white powder coat finish throughout, to fit right into your clinic setting.</span></li>
+            <li class="read-more-wrap py-2"><span class="read-more-heading">Sourced and built all in the U.S.A.</span><span class="read-more-target"> by a team of experienced Bioengineers and Biotechnicians. All of our parts come from the U.S.A and all of our carts are engineered, designed, and assembled in the U.S.A too. No shortcuts here, we believe in our country and in building our products to the best standards possible.</span></li>
+            <li class="read-more-wrap py-2"><span class="read-more-heading">We pay attention</span><span class="read-more-target"> to the necessary details and have designed this All-In-One cart to cater to the desires from those asking on the clinical floor. Whether it be your hardworking Biotechnicians, long standing Nurses, or on the go Physicians, the All-In-One cart serves their every need.</span></li>
+            <label for="quality" class="read-more-trigger cursor-pointer inline-block mt-2 px-4 py-2 bg-[var(--secondary-color)] text-white rounded border hover:bg-transparent hover:border-[var(--secondary-color)] hover:text-[var(--tertiary-color)] transition-all"></label>
+          </div>
         </div>
-
-        <div class="container lex flex-col md:grid grid-cols-2 gap-8">
-            <div>
-                <iframe class="w-full h-[500px]" allow="fullscreen" src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
+        <div class="feature-card flex flex-col rounded bg-gray-100 w-full">
+          <div class="relative bg-[var(--secondary-color)] rounded-t w-full">
+            <div class="flex items-center justify-start text-white py-9 px-4">
+              <svg class="mr-3" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" clip-rule="evenodd" width="64" height="64" viewBox="0 0 71 75"><path id="chat-icon" fill="#fff" d="M31.884,53.312c0,-8.733 8.091,-15.812 18.071,-15.812c9.979,0 18.07,7.079 18.07,15.812c0,3.975 -1.68,7.612 -4.447,10.39c0.217,2.295 0.939,4.812 1.739,6.7c0.178,0.42 -0.165,0.89 -0.617,0.818c-5.096,-0.836 -8.125,-2.119 -9.444,-2.788c-1.729,0.462 -3.512,0.694 -5.301,0.692c-9.98,-0 -18.071,-7.08 -18.071,-15.812Zm9.035,2.259c1.24,-0 2.259,-1.02 2.259,-2.259c0,-1.239 -1.019,-2.259 -2.259,-2.259c-1.239,-0 -2.258,1.02 -2.258,2.259c-0,1.239 1.019,2.259 2.258,2.259Zm15.812,-2.259c0,1.239 1.02,2.259 2.259,2.259c1.239,-0 2.259,-1.02 2.259,-2.259c-0,-1.239 -1.02,-2.259 -2.259,-2.259c-1.239,-0 -2.259,1.02 -2.259,2.259Zm-9.035,-0c-0,1.239 1.02,2.259 2.259,2.259c1.239,-0 2.259,-1.02 2.259,-2.259c-0,-1.239 -1.02,-2.259 -2.259,-2.259c-1.239,-0 -2.259,1.02 -2.259,2.259Zm-17.434,5.833c0.034,0.135 -0.001,0.278 -0.093,0.381c-0.093,0.103 -0.231,0.154 -0.369,0.135c-1.506,-0.204 -3.617,-0.476 -4.887,-0.814c-2.167,1.095 -6.829,3.091 -14.45,4.604c-0.987,0.195 -1.978,0.375 -2.971,0.537c-0.833,0.134 -1.467,-0.733 -1.137,-1.508c0.369,-0.873 0.709,-1.758 1.016,-2.654l0.013,-0.042c1.033,-3 1.875,-6.45 2.183,-9.662c-5.112,-5.125 -8.208,-11.834 -8.208,-19.167c-0,-16.108 14.925,-29.167 33.333,-29.167c18.408,0 33.333,13.059 33.333,29.167c0,3.281 -0.619,6.435 -1.76,9.379c-0.052,0.13 -0.166,0.225 -0.303,0.253c-0.137,0.029 -0.28,-0.014 -0.379,-0.113c-0.725,-0.725 -2.129,-2.129 -2.627,-2.626c-0.11,-0.11 -0.149,-0.273 -0.102,-0.421c0.657,-2.082 1.005,-4.254 1.005,-6.472c-0,-13.3 -12.517,-25 -29.167,-25c-16.65,-0 -29.167,11.7 -29.167,25c0,6.117 2.571,11.792 6.992,16.225c0.875,0.878 1.314,2.103 1.196,3.337c-0.293,2.824 -0.848,5.613 -1.658,8.334c5.812,-1.346 9.362,-2.904 10.975,-3.721c0.914,-0.463 1.968,-0.573 2.958,-0.308c1.016,0.27 2.044,0.493 3.079,0.667c0.162,0.028 0.293,0.148 0.335,0.308c0.17,0.663 0.621,2.417 0.86,3.348Z"/></svg>
+              <span class="text-4xl">Ease of Use</span>
             </div>
-            <div class="pt-8 md:pt-0">
-                <h2 class="font-bold min-[320px]:text-lg min-[375px]:text-xl text-2xl md:text-4xl lg:text-5xl">Engineered for <span class="text-[var(--secondary-color)]">Safety</span></h2>
-                <p class="py-8">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit tenetur deleniti qui recusandae pariatur tempore rem, dignissimos atque, magni consequatur excepturi provident, eum quibusdam? Accusamus ullam aperiam vero sequi ducimus?</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit tenetur deleniti qui recusandae pariatur tempore rem, dignissimos atque, magni consequatur excepturi provident, eum quibusdam? Accusamus ullam aperiam vero sequi ducimus?</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit tenetur deleniti qui recusandae pariatur tempore rem, dignissimos atque, magni consequatur excepturi provident, eum quibusdam? Accusamus ullam aperiam vero sequi ducimus?</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit tenetur deleniti qui recusandae pariatur tempore rem, dignissimos atque, magni consequatur excepturi provident, eum quibusdam? Accusamus ullam aperiam vero sequi ducimus?</p>
-            </div>
+            <svg class="absolute" style="bottom: -14px; left: 25px" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" clip-rule="evenodd" width="18" height="18" viewBox="0 0 75 50"><path fill="var(--secondary-color)" d="M37.5,48.313l37.5,-48.313l-75,0l37.5,48.313Z"/></svg>
+          </div>
+          <div class="p-4">
+            <input type="checkbox" class="read-more-state" id="ease" />
+            <li class="py-2 read-more-wrap"><span class="read-more-heading">Assessable removable features</span><span class="read-more-target"> that allows for easy cleaning and maintenance.</span></li>
+            <li class="read-more-wrap py-2"><span class="read-more-heading">Easy and quick connecting water lines</span><span class="read-more-target"> with the quick disconnect fittings our carts come standard with.</span></li>
+            <li class="read-more-wrap py-2"><span class="read-more-heading">Large table-top surface</span><span class="read-more-target"> for writing. Technicians, Nurses, and or Physicians can utilize this feature for jotting notes or placing items for working on equipment.</span></li>
+            <label for="ease" class="read-more-trigger cursor-pointer mt-2 inline-block px-4 py-2 bg-[var(--secondary-color)] text-white rounded border hover:bg-transparent hover:border-[var(--secondary-color)] hover:text-[var(--tertiary-color)] transition-all"></label>
+          </div>
         </div>
+      </div>
+      <div class="container flex flex-col md:grid grid-cols-5 gap-8 pb-16">
+        <div class="col-span-3">
+          <h3 class="font-bold min-[320px]:text-lg min-[375px]:text-xl text-2xl md:text-4xl lg:text-5xl">Robust and <span class="text-[var(--secondary-color)]">Modern Sleek Design</span></h3>
+          <p class="py-8">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto accusantium nisi ex quidem quia at quibusdam repellendus quo veniam deleniti magni laboriosam, impedit reprehenderit saepe molestias cupiditate numquam minus recusandae.</p>
+          <!-- TODO: Gallery -->
+          <div id="gallery" class="images hidden 2xl:flex" style="border: none !important">
+            <img src="/public/img/product-img.png" alt="" width="300" height="200">
+            <img src="/public/img/product-img-2.png" alt="" width="300" height="200">
+            <img src="/public/img/product-img-3.png" alt="" width="300" height="200">
+          </div>
+          <div id="image-viewer">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="full-image">
+          </div>
+        </div>
+        <div class="col-span-2 pt-8 md:pt-0">
+          <div class="relative m-auto max-w-[1000px]">
+            {{range .Products}}
+              <div class="slide hidden fade">
+                <span class="absolute top-0 right-0 text-[var(--secondary-color)] text-[12px] py-2 px-3">{{.Id}} / 3</span>
+                <img class="w-full" src="/public/img/{{.ImgFile}}" alt="{{.Caption}}">
+                <span class="absolute bottom-2 text-[var(--secondary-color)] text-xs sm:text-lg w-full text-center">{{.Caption}}</span>
+              </div>
+            {{end}}
+            <button class="prev gallery-btn absolute top-2/4 w-auto p-4 -mt-6 bg-[var(--secondary-color)] border border-[var(--secondary-color)] text-white font-bold text-xs sm:text-lg transition-all rounded hover:bg-white hover:text-[var(--tertiary-color)]">❮</button>
+            <button class="next gallery-btn absolute right-0 top-2/4 w-auto p-4 -mt-6 bg-[var(--secondary-color)] border border-[var(--secondary-color)] text-white font-bold text-xs sm:text-lg transition-all rounded hover:bg-white hover:text-[var(--tertiary-color)]">❯</button>
+          </div>
+          <div class="text-center">
+            <span class="dot inline-block cursor-pointer h-4 w-4 mx-[2px] bg-[#bbb] rounded-full transition-all hover:bg-[#717171]"></span>
+            <span class="dot inline-block cursor-pointer h-4 w-4 mx-[2px] bg-[#bbb] rounded-full transition-all hover:bg-[#717171]"></span>
+            <span class="dot inline-block cursor-pointer h-4 w-4 mx-[2px] bg-[#bbb] rounded-full transition-all hover:bg-[#717171]"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="container flex flex-col md:grid grid-cols-2 gap-8">
+        <div>
+          <iframe class="w-full h-[500px]" allow="fullscreen" src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
+        </div>
+        <div class="pt-8 md:pt-0">
+          <h2 class="font-bold min-[320px]:text-lg min-[375px]:text-xl text-2xl md:text-4xl lg:text-5xl">Engineered for <span class="text-[var(--secondary-color)]">Safety</span></h2>
+          <p class="py-8">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit tenetur deleniti qui recusandae pariatur tempore rem, dignissimos atque, magni consequatur excepturi provident, eum quibusdam? Accusamus ullam aperiam vero sequi ducimus?</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit tenetur deleniti qui recusandae pariatur tempore rem, dignissimos atque, magni consequatur excepturi provident, eum quibusdam? Accusamus ullam aperiam vero sequi ducimus?</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit tenetur deleniti qui recusandae pariatur tempore rem, dignissimos atque, magni consequatur excepturi provident, eum quibusdam? Accusamus ullam aperiam vero sequi ducimus?</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit tenetur deleniti qui recusandae pariatur tempore rem, dignissimos atque, magni consequatur excepturi provident, eum quibusdam? Accusamus ullam aperiam vero sequi ducimus?</p>
+        </div>
+      </div>
     </section>
-
     <!-- TODO: NEW PRICING SECTION -->
     <section id="pricing" class="py-20">
-        <div class="container">
-            PRICING
-            <div class="last-cta">
-                <h3 class="font-bold min-[375px]:text-lg text-xl md:text-3xl lg:text-4xl pb-8">Ready to order?</h3>
-                <span><a href="/contact" class='mb-4 md:mb-0 pl-4 md:px-4 py-2 md:rounded md:border md:bg-[var(--secondary-color)] md:text-white md:hover:fill-[var()] md:hover:bg-transparent md:hover:text-[var(--tertiary-color)] hover:border-[var(--secondary-color)] transition-all'>Contact</a><span class="px-2"> Or Call </span><a class="call-now py-2 text-[var(--secondary-color)]" href="tel:1951499-9971" title="Call Now">1-(951)-499-9971</a></span>
-            </div>
+      <div class="container">
+        <header class="text-center">
+          <h2 class="text-center font-bold min-[320px]:text-xl min-[375px]:text-2xl text-3xl md:text-5xl lg:text-6xl">Pricing</h2>
+        </header>
+        <div>
+          <!-- Pricing content here -->
         </div>
+        <div class="text-center">
+          <h3 class="font-bold min-[375px]:text-lg text-xl md:text-3xl lg:text-4xl pb-8">Ready to order?</h3>
+          <span><a href="/order" class='mb-4 md:mb-0 pl-4 md:px-4 py-2 md:rounded md:border md:bg-[var(--secondary-color)] md:text-white md:hover:fill-[var()] md:hover:bg-transparent md:hover:text-[var(--tertiary-color)] hover:border-[var(--secondary-color)] transition-all'>Order Now</a><span class="px-2"> Or Call </span><a class="call-now py-2 text-[var(--secondary-color)]" href="tel:1951499-9971" title="Call Now">1-(951)-499-9971</a></span>
+        </div>
+      </div>
     </section>
-
     <section class="py-20 bg-[var(--secondary-color)]">
-
-        <div class="container flex flex-col md:grid grid-rows-2 md:h-40 text-white">
-
-            <div class="row-start-1 row-auto">
-                <header class="text-white text-center">
-                    <h2 class="text-center md:text-end font-bold min-[320px]:text-xl min-[375px]:text-2xl text-3xl">What Our Customers Say About Us!</h2>
-                </header>
-            </div>
-
-            <div class="relative row-start-2 flex flex-col md:flex-row items-center md:justify-end">
-                
-                {{range .Other}}
-                    
-                        <div class="testimonial hidden fade flex flex-col-reverse md:flex-row items-center justify-end text-end pt-4 md:pt-0 transition-all">
-                            <div class="md:w-1/2">
-                                <p><em>"{{.Quote}}"</em></p>
-                                <span>- {{.Name}}</span>
-                            </div>
-                            <div class="md:inline-block overflow-hidden mb-4 md:mb-0 md:mx-8">
-                                <img class="rounded" width="199" height="133" src="/public/img/{{.ImgFile}}" alt="{{.ImgAlt}}">
-                            </div>
-                        </div>
-                 
-                {{end}}
-                
-                <div class="testimonial-btns flex md:flex-col items-center pt-8 md:pt-0 md:pl-2">
-                    <button class="border rounded border-white flex items-center text-white mx-2 md:mx-0 md:mb-3 p-4 transition-all">
-                        <svg class="-rotate-90 md:rotate-0 transition-all" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"/></svg>
-                    </button>
-                    <button class="border rounded border-white flex items-center text-white mx-2 md:mx-0 p-4 transition-all">
-                        <svg class="-rotate-90 md:rotate-0 transition-all" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>
-                    </button>
-                </div>
-
-            </div>
+      <div class="container flex flex-col md:grid grid-rows-2 md:h-40 text-white">
+        <div class="row-start-1 row-auto">
+          <header class="text-white text-center">
+              <h2 class="text-center md:text-end font-bold min-[320px]:text-xl min-[375px]:text-2xl text-3xl">What Our Customers Say About Us!</h2>
+          </header>
         </div>
+        <div class="relative row-start-2 flex flex-col md:flex-row items-center md:justify-end">
+          {{range .Other}}
+            <div class="testimonial hidden fade flex flex-col-reverse md:flex-row items-center justify-end text-end pt-4 md:pt-0 transition-all">
+              <div class="md:w-1/2">
+                <p><em>"{{.Quote}}"</em></p>
+                <span>- {{.Name}}</span>
+              </div>
+              <div class="md:inline-block overflow-hidden mb-4 md:mb-0 md:mx-8">
+                <img class="rounded" width="199" height="133" src="/public/img/{{.ImgFile}}" alt="{{.ImgAlt}}">
+              </div>
+            </div>
+          {{end}}
+          <div class="testimonial-btns flex md:flex-col items-center pt-8 md:pt-0 md:pl-2">
+            <button class="border rounded border-white flex items-center text-white mx-2 md:mx-0 md:mb-3 p-4 transition-all">
+              <svg class="-rotate-90 md:rotate-0 transition-all" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"/></svg>
+            </button>
+            <button class="border rounded border-white flex items-center text-white mx-2 md:mx-0 p-4 transition-all">
+              <svg class="-rotate-90 md:rotate-0 transition-all" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
     </section>
   </main>
 {{end}}
 
 {{define "js"}}
-	<script>
-		function learnMore() {
-				document.getElementById("features").scrollIntoView({ block: "start", behavior: "smooth" })
-		}
-	</script>
-  
+  <script>
+    function learnMore() {
+      document.getElementById("features").scrollIntoView({ block: "start", behavior: "smooth" })
+    }
+  </script>
+
   <script src="/public/js/lib/updateState.js"></script>
   <script src="/public/js/lib/readmore.js"></script>
   <script src="/public/js/lib/gallery.js"></script>
