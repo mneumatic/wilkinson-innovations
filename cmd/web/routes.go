@@ -22,7 +22,9 @@ func routes(app *configs.AppConfig) http.Handler {
 	mux.Post("/", handlers.Repo.PostHome)
 	mux.Post("/mailling-list", handlers.Repo.PostFootbar)
 	mux.Get("/about", handlers.Repo.About)
+	mux.Get("/order", handlers.Repo.Order)
 	mux.Get("/contact", handlers.Repo.Contact)
+	mux.Get("/support", handlers.Repo.Support)
 	mux.Get("/privacy-policy", handlers.Repo.PrivacyPolicy)
 	mux.Get("/terms-of-service", handlers.Repo.TermsOfService)
 

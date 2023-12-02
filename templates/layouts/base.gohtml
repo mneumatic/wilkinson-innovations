@@ -51,7 +51,7 @@
         <div class="container flex items-center justify-between md:justify-start">
     
           <a href="/" class="brand-logo flex flex-row items-center" aria-label="Wilkinson Innovations">
-              <svg class="mr-3" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" clip-rule="evenodd" width="48" height="48" viewBox="0 0 100 100"><g id="icon-brand"><path id="Background" fill="#0078a3" d="M91.667,0c2.21,-0 4.329,0.878 5.892,2.441c1.563,1.563 2.441,3.682 2.441,5.892c-0,18.834 -0,64.5 -0,83.334c0,2.21 -0.878,4.329 -2.441,5.892c-1.563,1.563 -3.682,2.441 -5.892,2.441c-18.834,0 -64.5,0 -83.334,0c-2.21,0 -4.329,-0.878 -5.892,-2.441c-1.563,-1.563 -2.441,-3.682 -2.441,-5.892c-0,-18.834 -0,-64.5 -0,-83.334c-0,-2.21 0.878,-4.329 2.441,-5.892c1.563,-1.563 3.682,-2.441 5.892,-2.441l83.334,0Z"/><g id="wi"><clipPath id="_clip1"><path d="M28.081,27.625l7.195,48.599l-11.505,0l-7.195,-48.599l11.505,0Zm21.882,24.399l3.562,24.2l-11.514,0l-3.562,-24.2l11.514,0Zm15.013,-24.399l7.195,48.599l-11.505,0l-7.194,-48.599l11.504,0Z"/></clipPath><g clip-path="url(#_clip1)"><path fill="#fff" d="M16.378 27.427H72.369V76.422H16.378z"/></g><g id="i"><clipPath id="_clip2"><path d="M83.424,44.604l-8.331,-0l-2.414,-17.258l8.331,0l2.414,17.258Z"/></clipPath><g clip-path="url(#_clip2)"><path fill="#fff" d="M72.48 27.148H83.622V44.802H72.48z"/></g><clipPath id="_clip3"><path d="M80.845,26.156l-8.331,0l-0.397,-2.38l8.332,-0l0.396,2.38Z"/></clipPath><g clip-path="url(#_clip3)"><path fill="#f3342f" d="M71.919 23.577H81.04299999999999V26.354000000000003H71.919z"/></g></g></g></g></svg>
+            <svg class="mr-3" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" clip-rule="evenodd" width="48" height="48" viewBox="0 0 100 100"><g id="icon-brand"><path id="Background" fill="#0078a3" d="M91.667,0c2.21,-0 4.329,0.878 5.892,2.441c1.563,1.563 2.441,3.682 2.441,5.892c-0,18.834 -0,64.5 -0,83.334c0,2.21 -0.878,4.329 -2.441,5.892c-1.563,1.563 -3.682,2.441 -5.892,2.441c-18.834,0 -64.5,0 -83.334,0c-2.21,0 -4.329,-0.878 -5.892,-2.441c-1.563,-1.563 -2.441,-3.682 -2.441,-5.892c-0,-18.834 -0,-64.5 -0,-83.334c-0,-2.21 0.878,-4.329 2.441,-5.892c1.563,-1.563 3.682,-2.441 5.892,-2.441l83.334,0Z"/><g id="wi"><clipPath id="_clip1"><path d="M28.081,27.625l7.195,48.599l-11.505,0l-7.195,-48.599l11.505,0Zm21.882,24.399l3.562,24.2l-11.514,0l-3.562,-24.2l11.514,0Zm15.013,-24.399l7.195,48.599l-11.505,0l-7.194,-48.599l11.504,0Z"/></clipPath><g clip-path="url(#_clip1)"><path fill="#fff" d="M16.378 27.427H72.369V76.422H16.378z"/></g><g id="i"><clipPath id="_clip2"><path d="M83.424,44.604l-8.331,-0l-2.414,-17.258l8.331,0l2.414,17.258Z"/></clipPath><g clip-path="url(#_clip2)"><path fill="#fff" d="M72.48 27.148H83.622V44.802H72.48z"/></g><clipPath id="_clip3"><path d="M80.845,26.156l-8.331,0l-0.397,-2.38l8.332,-0l0.396,2.38Z"/></clipPath><g clip-path="url(#_clip3)"><path fill="#f3342f" d="M71.919 23.577H81.04299999999999V26.354000000000003H71.919z"/></g></g></g></g></svg>
             <span class="font-bold min-[320px]:text-base min-[375px]:text-xl min-[413px]:text-2xl whitespace-nowrap">Wilkinson Innovations</span>
           </a>
     
@@ -62,9 +62,10 @@
             <nav class="block md:flex items-center justify-between w-full">
               <div>
                 <a href="/#features" class="features block md:inline-block mb-1 md:mb-0 pl-4 md:px-4 py-2">Features</a>
+                <a href="/#pricing" class="pricing block md:inline-block mb-1 md:mb-0 pl-4 md:px-4 py-2">Pricing</a>
                 <a href="/about" class='about block md:inline-block mb-1 md:mb-0 pl-4 md:px-4 py-2 {{if eq .Title "About | Wilkinson Innovations"}}active{{end}}'>About</a>
               </div>
-              <a href="/contact" class='contact block md:inline-block mb-4 md:mb-0 pl-4 md:px-4 py-2 bg-[var(--secondary-color)] text-white rounded border hover:bg-transparent hover:border-[var(--secondary-color)] hover:text-[var(--tertiary-color)] transition-all  {{if eq .Title "Contact Us | Wilkinson Innovations"}}active{{end}}'>Contact</a>
+              <a href="/order" class='order block md:inline-block mb-4 md:mb-0 pl-4 md:px-4 py-2 bg-[var(--secondary-color)] text-white rounded border hover:bg-transparent hover:border-[var(--secondary-color)] hover:text-[var(--tertiary-color)] transition-all  {{if eq .Title "Order | Wilkinson Innovations"}}!hidden{{end}}'>Order Now</a>
             </nav>
           </div>
         </div>
@@ -93,7 +94,8 @@
                   <a class="block py-2" href="/">Home</a>
                   <a class="block py-2" href="/#features">Features</a>
                   <a class="block py-2" href="/about">About</a>
-                  <a class="block py-2" href="/contact">Contact</a>
+                  <a class="block py-2" href="/contact">Contact Us</a>
+                  <a class="block py-2" href="/support">Support</a>
                   <a class="block py-2" href="/privacy-policy">Privacy Policy</a>
                   <a class="block py-2" href="/terms-of-service">Terms of Service</a>
                 </div>

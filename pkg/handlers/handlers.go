@@ -62,9 +62,23 @@ func (m *Repository) About(w http.ResponseWriter, r *http.Request) {
 	})
 }
 
+func (m *Repository) Order(w http.ResponseWriter, r *http.Request) {
+	render.RenderTemplate(w, r, "order.gohtml", &models.Template{
+		Title:      "Order | Wilkinson Innovations",
+		Production: m.App.Production,
+	})
+}
+
 func (m *Repository) Contact(w http.ResponseWriter, r *http.Request) {
 	render.RenderTemplate(w, r, "contact.gohtml", &models.Template{
 		Title:      "Contact Us | Wilkinson Innovations",
+		Production: m.App.Production,
+	})
+}
+
+func (m *Repository) Support(w http.ResponseWriter, r *http.Request) {
+	render.RenderTemplate(w, r, "support.gohtml", &models.Template{
+		Title:      "Support | Wilkinson Innovations",
 		Production: m.App.Production,
 	})
 }
