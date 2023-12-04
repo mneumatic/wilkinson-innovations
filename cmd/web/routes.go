@@ -20,7 +20,7 @@ func routes(app *configs.AppConfig) http.Handler {
 
 	mux.Get("/", handlers.Repo.Home)
 	mux.Post("/", handlers.Repo.PostHome)
-	mux.Post("/mailling-list", handlers.Repo.PostFootbar)
+	mux.Post("/mailing-list", handlers.Repo.PostFootbar)
 	mux.Get("/about", handlers.Repo.About)
 	mux.Get("/order", handlers.Repo.Order)
 	mux.Get("/contact", handlers.Repo.Contact)
