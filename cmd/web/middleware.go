@@ -8,15 +8,15 @@ import (
 
 // NoSurf adds CSRF protection to all POST Request
 func NoSurf(next http.Handler) http.Handler {
-	csrfHanlder := nosurf.New(next)
+	csrfHandler := nosurf.New(next)
 
-	csrfHanlder.SetBaseCookie(http.Cookie{
+	csrfHandler.SetBaseCookie(http.Cookie{
 		HttpOnly: true,
-		Path: "/",
-		Secure: app.Production,
+		Path:     "/",
+		Secure:   app.Production,
 		SameSite: http.SameSiteLaxMode,
 	})
-	return csrfHanlder
+	return csrfHandler
 }
 
 // SessionLoad loads and saves the session on evey request
