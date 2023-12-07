@@ -50,19 +50,19 @@
   }
 
   // TODO: Gallery
-  const galleryImages = document.querySelectorAll(".images img")
-
-  galleryImages.forEach(img => {
-    img.addEventListener("click", () => {
-      // console.log(img.src)
-      document.getElementById("full-image").src = img.src
-      document.getElementById("image-viewer").style.display = "block"
-    })
-  })
-
-  document.querySelector("#image-viewer .close").addEventListener("click", () => {
-    document.getElementById("image-viewer").style.display = "none"
-  })
+  // const galleryImages = document.querySelectorAll(".images img")
+  //
+  // galleryImages.forEach(img => {
+  //   img.addEventListener("click", () => {
+  //     // console.log(img.src)
+  //     document.getElementById("full-image").src = img.src
+  //     document.getElementById("image-viewer").style.display = "block"
+  //   })
+  // })
+  //
+  // document.querySelector("#image-viewer .close").addEventListener("click", () => {
+  //   document.getElementById("image-viewer").style.display = "none"
+  // })
 
   testimonialBtns[0].addEventListener('click', () => { move(-1, testimonials, testimonialCurrent, "testimonial") })
   testimonialBtns[1].addEventListener('click', () => { move(1, testimonials, testimonialCurrent, "testimonial") })
