@@ -1,6 +1,6 @@
 {{template "base" .}}
 
-<!-- TODO: Preload imgs??? -->
+<!-- TODO: Preload images??? -->
 {{define "css"}}
     <link rel="preload" as="image" href="/public/img/hero-image.webp">
     <style>
@@ -11,7 +11,7 @@
         }
 
         #gallery img:hover {opacity: 0.7;}
-
+        /* TODO: Remove image-viewer gallery ruleset. */
         /* The Modal (background) */
         #image-viewer {
             display: none;
@@ -242,9 +242,110 @@
       <div class="container">
         <header class="text-center">
           <h2 class="text-center font-bold min-[320px]:text-xl min-[375px]:text-2xl text-3xl md:text-5xl lg:text-6xl">Pricing</h2>
+          <p class="pt-8 pb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit tenetur deleniti qui recusandae pariatur tempore rem, dignissimos atque, magni consequatur excepturi provident, eum quibusdam? Accusamus ullam aperiam vero sequi ducimus?</p>
         </header>
-        <div>
-          <!-- Pricing content here -->
+        <div class="flex flex-col items-center md:flex-row md:justify-around py-16">
+          <div class="flex flex-col" style="width: 350px">
+            <div class="rounded overflow-hidden bg-gray-100">
+              <img class="img-fluid p-7" src="/public/img/product-img.png" alt="Product">
+              <div class="flex flex-col p-4 bg-[var(--secondary-color)] text-[var(--primary-color)] text-right">
+                <span class="text-lg"><strong>$2,500.00</strong> <span class="text-xs font-thin">USD</span></span>
+                <span class="text-xs font-thin">Or $X amount of payments of $X</span>
+              </div>
+            </div>
+            <div class="pt-8">
+              <table class="table-auto" style="width: 100%">
+                <thead class="bg-gray-100">
+                  <tr class="grid grid-cols-2 text-center py-2">
+                    <th>Image Name</th>
+                    <th>Included</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="grid grid-cols-2 text-center py-2">
+                    <td>Item 1</td>
+                    <td class="flex justify-center"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path stroke="var(--secondary-color)" d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/></svg></td>
+                  </tr>
+                  <tr class="grid grid-cols-2 text-center py-2 bg-gray-100">
+                    <td>Item 2</td>
+                    <!--<td class="flex justify-center"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path stroke="var(--secondary-color)" d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/></svg></td>-->
+                  </tr>
+                  <tr class="grid grid-cols-2 text-center py-2">
+                    <td>Item 3</td>
+                    <!--<td class="flex justify-center"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path stroke="var(--secondary-color)" d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/></svg></td>-->
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="flex flex-col pt-16 md:pt-0" style="width: 350px">
+            <div class="rounded overflow-hidden bg-gray-100">
+              <img class="img-fluid p-7" src="/public/img/product-img.png" alt="Product">
+              <div class="flex flex-col p-4 bg-[var(--secondary-color)] text-[var(--primary-color)] text-right">
+                <span class="text-lg"><strong>$3,000.00</strong> <span class="text-xs font-thin">USD</span></span>
+                <span class="text-xs font-thin">Or $X amount of payments of $X</span>
+              </div>
+            </div>
+            <div class="pt-8">
+              <table class="table-auto" style="width: 100%">
+                <thead class="bg-gray-100">
+                <tr class="grid grid-cols-2 text-center py-2">
+                  <th>Image Name</th>
+                  <th>Included</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="grid grid-cols-2 text-center py-2">
+                  <td>Item 1</td>
+                  <td class="flex justify-center"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path stroke="var(--secondary-color)" d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/></svg></td>
+                </tr>
+                <tr class="grid grid-cols-2 text-center py-2 bg-gray-100">
+                  <td>Item 2</td>
+                  <td class="flex justify-center"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path stroke="var(--secondary-color)" d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/></svg></td>
+                </tr>
+                <tr class="grid grid-cols-2 text-center py-2">
+                  <td>Item 3</td>
+                  <!--<td class="flex justify-center"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path stroke="var(--secondary-color)" d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/></svg></td>-->
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="flex flex-col pt-16 md:pt-0" style="width: 350px">
+            <div class="rounded overflow-hidden bg-gray-100">
+              <img class="img-fluid p-7" src="/public/img/product-img.png" alt="Product">
+              <div class="flex flex-col p-4 bg-[var(--secondary-color)] text-[var(--primary-color)] text-right">
+                <span class="text-lg"><strong>$3,500.00</strong> <span class="text-xs font-thin">USD</span></span>
+                <span class="text-xs font-thin">Or $X amount of payments of $X</span>
+              </div>
+            </div>
+            <div class="pt-8">
+              <table class="table-auto" style="width: 100%">
+                <thead class="bg-gray-100">
+                <tr class="grid grid-cols-2 text-center py-2">
+                  <th>Image Name</th>
+                  <th>Included</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="grid grid-cols-2 text-center py-2">
+                  <td>Item 1</td>
+                  <td class="flex justify-center"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path stroke="var(--secondary-color)" d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/></svg></td>
+                </tr>
+                <tr class="grid grid-cols-2 text-center py-2 bg-gray-100">
+                  <td>Item 2</td>
+                  <td class="flex justify-center"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path stroke="var(--secondary-color)" d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/></svg></td>
+                </tr>
+                <tr class="grid grid-cols-2 text-center py-2">
+                  <td>Item 3</td>
+                  <td class="flex justify-center"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path stroke="var(--secondary-color)" d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/></svg></td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
         </div>
         <div class="text-center">
           <h3 class="font-bold min-[375px]:text-lg text-xl md:text-3xl lg:text-4xl pb-8">Ready to order?</h3>
