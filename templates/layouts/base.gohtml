@@ -49,7 +49,7 @@
       {{end}}
 		</head>
 		<body>
-			<header id="site-navigation-navbar" class="fixed flex items-center h-16 w-full transition-shadow" style="background-color: var(--primary-color)">
+			<header id="site-navigation-navbar" class="fixed flex items-center h-16 w-full transition-shadow bg-gray-100">
         <div class="container flex items-center justify-between md:justify-start">
     
           <a href="/" class="brand-logo flex flex-row items-center" aria-label="Wilkinson Innovations">
@@ -60,7 +60,7 @@
           <input id="site-navigation-navbar-toggle" class="hidden" type="checkbox">
           <label for="site-navigation-navbar-toggle" class="cursor-pointer md:hidden"><span></span></label>
     
-          <div id="site-navigation-navbar-nav-links" class="max-h-0 md:max-h-full overflow-hidden absolute md:relative top-16 md:top-0 left-0 flex md:items-center md:justify-between m-0 md:ml-6 w-full shadow-lg md:shadow-none" style="background-color: var(--primary-color);">
+          <div id="site-navigation-navbar-nav-links" class="max-h-0 md:max-h-full overflow-hidden absolute md:relative top-16 md:top-0 left-0 flex md:items-center md:justify-between m-0 md:ml-6 w-full shadow-lg md:shadow-none">
             <nav class="block md:flex items-center justify-between w-full">
               <div>
                 <a href="/#features" class="features block md:inline-block mb-1 md:mb-0 pl-4 md:px-4 py-2">Features</a>
@@ -75,7 +75,7 @@
 
 			{{block "content" .}}{{end}}
 
-			<footer id="site-navigation-footbar" class="pt-20">
+			<footer id="site-navigation-footbar" class="pt-20 bg-gray-100">
         <div class="container flex">
           <div class="flex flex-col md:grid grid-cols-2 grid-flow-col">
             <nav>
