@@ -6,10 +6,10 @@ import (
 	"net/http"
 	"os"
 	"time"
-	"wilkinson-innovations/pkg/configs"
-	"wilkinson-innovations/pkg/data"
-	"wilkinson-innovations/pkg/handlers"
-	"wilkinson-innovations/pkg/render"
+	"wilkinson-innovations/internal/configs"
+	"wilkinson-innovations/internal/data"
+	"wilkinson-innovations/internal/handlers"
+	"wilkinson-innovations/internal/render"
 
 	"github.com/alexedwards/scs/v2"
 )
@@ -54,7 +54,6 @@ func main() {
 
 	// Format port string
 	addr := fmt.Sprintf(":%s", port)
-
 
 	srv := &http.Server{
 		Addr:         addr,

@@ -3,9 +3,9 @@ package handlers
 import (
 	"fmt"
 	"net/http"
-	"wilkinson-innovations/pkg/configs"
-	"wilkinson-innovations/pkg/models"
-	"wilkinson-innovations/pkg/render"
+	"wilkinson-innovations/internal/configs"
+	"wilkinson-innovations/internal/models"
+	"wilkinson-innovations/internal/render"
 )
 
 var Repo *Repository

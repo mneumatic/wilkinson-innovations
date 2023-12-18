@@ -6,8 +6,8 @@ import (
 	"log"
 	"net/http"
 	"path/filepath"
-	"wilkinson-innovations/pkg/configs"
-	"wilkinson-innovations/pkg/models"
+	"wilkinson-innovations/internal/configs"
+	"wilkinson-innovations/internal/models"
 
 	"github.com/justinas/nosurf"
 )

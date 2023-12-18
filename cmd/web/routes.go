@@ -2,10 +2,10 @@ package main
 
 import (
 	"net/http"
-	"wilkinson-innovations/pkg/configs"
-	"wilkinson-innovations/pkg/handlers"
-	"wilkinson-innovations/pkg/models"
-	"wilkinson-innovations/pkg/render"
+	"wilkinson-innovations/internal/configs"
+	"wilkinson-innovations/internal/handlers"
+	"wilkinson-innovations/internal/models"
+	"wilkinson-innovations/internal/render"
 
 	"github.com/go-chi/chi/v5"
 	"github.com/go-chi/chi/v5/middleware"
