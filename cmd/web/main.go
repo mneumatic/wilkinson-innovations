@@ -53,7 +53,7 @@ func main() {
 	}
 
 	// Format port string
-	addr := fmt.Sprintf(":%s", port)
+	addr := fmt.Sprintf("localhost:%s", port)
 
 	srv := &http.Server{
 		Addr:         addr,
