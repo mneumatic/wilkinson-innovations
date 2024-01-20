@@ -18,6 +18,36 @@ var app configs.AppConfig
 var session *scs.SessionManager
 
 func main() {
+	err := run()
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	// Check if PORT is available.
+	// If "false" set port
+	port, ok := os.LookupEnv("PORT")
+	if !ok {
+		port = "8080"
+	}
+
+	// Format port string
+	addr := fmt.Sprintf("localhost:%s", port)
+
+	srv := &http.Server{
+		Addr:         addr,
+		Handler:      routes(&app),
+		ReadTimeout:  15 * time.Second,
+		WriteTimeout: 15 * time.Second,
+		IdleTimeout:  15 * time.Second,
+	}
+
+	log.Println("main: running server on port", port)
+	if err := srv.ListenAndServe(); err != nil {
+		log.Fatalf("main: couldn't start server: %v\n", err)
+	}
+}
+
+func run() error {
 	// Set Production / Development
 	app.Production = false
 
@@ -44,27 +74,5 @@ func main() {
 	handlers.NewHandlers(repo)
 
 	render.NewTemplates(&app)
-
-	// Check if PORT is available.
-	// If "false" set port
-	port, ok := os.LookupEnv("PORT")
-	if !ok {
-		port = "8080"
-	}
-
-	// Format port string
-	addr := fmt.Sprintf("localhost:%s", port)
-
-	srv := &http.Server{
-		Addr:         addr,
-		Handler:      routes(&app),
-		ReadTimeout:  15 * time.Second,
-		WriteTimeout: 15 * time.Second,
-		IdleTimeout:  15 * time.Second,
-	}
-
-	log.Println("main: running server on port", port)
-	if err := srv.ListenAndServe(); err != nil {
-		log.Fatalf("main: couldn't start server: %v\n", err)
-	}
+	return nil
 }
