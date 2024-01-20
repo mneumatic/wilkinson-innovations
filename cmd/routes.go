@@ -19,11 +19,10 @@ func routes(app *config.AppConfig) http.Handler {
 	mux.Use(SessionLoad)
 
 	mux.Get("/", handlers.Repo.Home)
-	mux.Post("/", handlers.Repo.PostHome)
-	mux.Post("/mailing-list", handlers.Repo.PostFootbar)
 	mux.Get("/about", handlers.Repo.About)
 	mux.Get("/order", handlers.Repo.Order)
 	mux.Get("/contact", handlers.Repo.Contact)
+	mux.Post("/contact", handlers.Repo.PostContact)
 	mux.Get("/support", handlers.Repo.Support)
 	mux.Get("/privacy-policy", handlers.Repo.PrivacyPolicy)
 	mux.Get("/terms-of-service", handlers.Repo.TermsOfService)

@@ -1,10 +1,12 @@
 package main
 
 import (
+	"encoding/gob"
 	"fmt"
 	"github.com/mneumantic/wilkinson-innovations/internal/config"
 	"github.com/mneumantic/wilkinson-innovations/internal/data"
 	"github.com/mneumantic/wilkinson-innovations/internal/handlers"
+	"github.com/mneumantic/wilkinson-innovations/internal/models"
 	"github.com/mneumantic/wilkinson-innovations/internal/render"
 	"log"
 	"net/http"
@@ -48,6 +50,9 @@ func main() {
 }
 
 func run() error {
+	// Session
+	gob.Register(models.Contact{})
+
 	// Set Production / Development
 	app.Production = false
 

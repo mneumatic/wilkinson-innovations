@@ -1,10 +1,11 @@
 package handlers
 
 import (
-	"fmt"
 	"github.com/mneumantic/wilkinson-innovations/internal/config"
+	"github.com/mneumantic/wilkinson-innovations/internal/forms"
 	"github.com/mneumantic/wilkinson-innovations/internal/models"
 	"github.com/mneumantic/wilkinson-innovations/internal/render"
+	"log"
 	"net/http"
 )
 
@@ -36,25 +37,6 @@ func (m *Repository) Home(w http.ResponseWriter, r *http.Request) {
 	})
 }
 
-func (m *Repository) PostHome(w http.ResponseWriter, r *http.Request) {
-	formDetails := struct {
-		Name    string
-		Company string
-		Email   string
-		Phone   string
-		Message string
-	}{
-		Name:    r.FormValue("name"),
-		Company: r.FormValue("company"),
-		Email:   r.FormValue("email"),
-		Phone:   r.FormValue("phone"),
-		Message: r.FormValue("message"),
-	}
-
-	fmt.Printf("Name: %s\nCompany: %s\nEmail: %s\nPhone: %s\nMessage: %s\n", formDetails.Name, formDetails.Company, formDetails.Email, formDetails.Phone, formDetails.Message)
-	http.Redirect(w, r, "/?contact-successful=true", http.StatusSeeOther)
-}
-
 func (m *Repository) About(w http.ResponseWriter, r *http.Request) {
 	render.RenderTemplate(w, r, "about.gohtml", &models.Template{
 		Title:      "About | Wilkinson Innovations",
@@ -70,10 +52,51 @@ func (m *Repository) Order(w http.ResponseWriter, r *http.Request) {
 }
 
 func (m *Repository) Contact(w http.ResponseWriter, r *http.Request) {
+	var emptyContact models.Contact
+	data := make(map[string]interface{})
+	data["contact"] = emptyContact
+
 	render.RenderTemplate(w, r, "contact.gohtml", &models.Template{
-		Title:      "Contact Us | Wilkinson Innovations",
-		Production: m.App.Production,
+		Title: "Contact Us | Wilkinson Innovations",
+		Form:  forms.New(nil),
+		Data:  data,
 	})
+}
+
+func (m *Repository) PostContact(w http.ResponseWriter, r *http.Request) {
+	err := r.ParseForm()
+	if err != nil {
+		log.Println(err)
+		return
+	}
+	contact := models.Contact{
+		Name:    r.Form.Get("name"),
+		Company: r.Form.Get("company"),
+		Email:   r.Form.Get("email"),
+		Phone:   r.Form.Get("phone"),
+		Message: r.Form.Get("message"),
+	}
+
+	form := forms.New(r.PostForm)
+
+	form.Required("name", "email", "message")
+	form.MinLength("name", 3, r)
+	form.IsEmail("email")
+	form.MinLength("message", 100, r)
+
+	if !form.Valid() {
+		data := make(map[string]interface{})
+		data["contact"] = contact
+
+		render.RenderTemplate(w, r, "contact.gohtml", &models.Template{
+			Form: form,
+			Data: data,
+		})
+		return
+	}
+
+	m.App.Session.Put(r.Context(), "contact", contact)
+	http.Redirect(w, r, "/?contact-successful=true", http.StatusSeeOther)
 }
 
 func (m *Repository) Support(w http.ResponseWriter, r *http.Request) {
@@ -81,38 +104,6 @@ func (m *Repository) Support(w http.ResponseWriter, r *http.Request) {
 		Title:      "Support | Wilkinson Innovations",
 		Production: m.App.Production,
 	})
-}
-
-func (m *Repository) PostContact(w http.ResponseWriter, r *http.Request) {
-	formDetails := struct {
-		Name    string
-		Company string
-		Email   string
-		Phone   string
-		Message string
-	}{
-		Name:    r.FormValue("name"),
-		Company: r.FormValue("company"),
-		Email:   r.FormValue("email"),
-		Phone:   r.FormValue("phone"),
-		Message: r.FormValue("message"),
-	}
-
-	fmt.Printf("Name: %s\nCompany: %s\nEmail: %s\nPhone: %s\nMessage: %s\n", formDetails.Name, formDetails.Company, formDetails.Email, formDetails.Phone, formDetails.Message)
-	http.Redirect(w, r, "/?contact-successful=true", http.StatusSeeOther)
-}
-
-func (m *Repository) PostFootbar(w http.ResponseWriter, r *http.Request) {
-	formDetails := struct {
-		Name  string
-		Email string
-	}{
-		Name:  r.FormValue("name"),
-		Email: r.FormValue("email"),
-	}
-
-	fmt.Printf("Name: %s\nCompany: %s\nEmail:", formDetails.Name, formDetails.Email)
-	http.Redirect(w, r, "/?mailling-list-successful=true", http.StatusSeeOther)
 }
 
 func (m *Repository) PrivacyPolicy(w http.ResponseWriter, r *http.Request) {
