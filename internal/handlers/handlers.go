@@ -2,21 +2,21 @@ package handlers
 
 import (
 	"fmt"
+	"github.com/mneumantic/wilkinson-innovations/internal/config"
+	"github.com/mneumantic/wilkinson-innovations/internal/models"
+	"github.com/mneumantic/wilkinson-innovations/internal/render"
 	"net/http"
-	"wilkinson-innovations/internal/configs"
-	"wilkinson-innovations/internal/models"
-	"wilkinson-innovations/internal/render"
 )
 
 var Repo *Repository
 
 // Repository is the respository type
 type Repository struct {
-	App *configs.AppConfig
+	App *config.AppConfig
 }
 
 // NewRepo creates a new respository
-func NewRepo(a *configs.AppConfig) *Repository {
+func NewRepo(a *config.AppConfig) *Repository {
 	return &Repository{
 		App: a,
 	}

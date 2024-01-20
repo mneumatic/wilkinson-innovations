@@ -2,19 +2,19 @@ package main
 
 import (
 	"fmt"
+	"github.com/mneumantic/wilkinson-innovations/internal/config"
+	"github.com/mneumantic/wilkinson-innovations/internal/data"
+	"github.com/mneumantic/wilkinson-innovations/internal/handlers"
+	"github.com/mneumantic/wilkinson-innovations/internal/render"
 	"log"
 	"net/http"
 	"os"
 	"time"
-	"wilkinson-innovations/internal/configs"
-	"wilkinson-innovations/internal/data"
-	"wilkinson-innovations/internal/handlers"
-	"wilkinson-innovations/internal/render"
 
 	"github.com/alexedwards/scs/v2"
 )
 
-var app configs.AppConfig
+var app config.AppConfig
 var session *scs.SessionManager
 
 func main() {

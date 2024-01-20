@@ -1,4 +1,4 @@
-module wilkinson-innovations
+module github.com/mneumantic/wilkinson-innovations
 
 go 1.20
 

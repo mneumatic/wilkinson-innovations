@@ -1,6 +1,6 @@
 package data
 
-import "wilkinson-innovations/internal/models"
+import "github.com/mneumantic/wilkinson-innovations/internal/models"
 
 // TestimonalData returns array of type struct
 func TestimonialData() []models.Testimonial {

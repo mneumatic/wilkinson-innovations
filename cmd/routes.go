@@ -1,17 +1,17 @@
 package main
 
 import (
+	"github.com/mneumantic/wilkinson-innovations/internal/config"
+	"github.com/mneumantic/wilkinson-innovations/internal/handlers"
+	"github.com/mneumantic/wilkinson-innovations/internal/models"
+	"github.com/mneumantic/wilkinson-innovations/internal/render"
 	"net/http"
-	"wilkinson-innovations/internal/configs"
-	"wilkinson-innovations/internal/handlers"
-	"wilkinson-innovations/internal/models"
-	"wilkinson-innovations/internal/render"
 
 	"github.com/go-chi/chi/v5"
 	"github.com/go-chi/chi/v5/middleware"
 )
 
-func routes(app *configs.AppConfig) http.Handler {
+func routes(app *config.AppConfig) http.Handler {
 	mux := chi.NewRouter()
 
 	mux.Use(middleware.Recoverer)

@@ -2,19 +2,19 @@ package render
 
 import (
 	"bytes"
+	"github.com/mneumantic/wilkinson-innovations/internal/config"
+	"github.com/mneumantic/wilkinson-innovations/internal/models"
 	"html/template"
 	"log"
 	"net/http"
 	"path/filepath"
-	"wilkinson-innovations/internal/configs"
-	"wilkinson-innovations/internal/models"
 
 	"github.com/justinas/nosurf"
 )
 
-var app *configs.AppConfig
+var app *config.AppConfig
 
-func NewTemplates(a *configs.AppConfig) {
+func NewTemplates(a *config.AppConfig) {
 	app = a
 }
 
