@@ -50,7 +50,7 @@
                 <div class="flex flex-col">
                   <label for="message">Message: {{with .Form.Errors.Get "message"}}<span class="text-red-600">{{.}}{{end}}</span></label>
                   <textarea id="message" name="message" class="p-2 mb-3 rounded border w-full" cols="30" rows="10" minlength="250" required>{{$contact.Message}}</textarea>
-                  <label id="char-count" class="text-right">100/100</label><span>Minimum</span>
+                  <label id="char-count" class="text-right">100/100</label>
                 </div>
                 <button type="submit" class="w-full md:w-[100px] inline-block mb-4 md:mb-0 p-4 md:px-4 py-2 bg-[var(--secondary-color)] text-white rounded border hover:bg-transparent hover:border-[var(--secondary-color)] hover:text-[var(--tertiary-color)] transition-all" >Submit</button>
               </div>
