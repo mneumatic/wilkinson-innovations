@@ -71,6 +71,7 @@ func (m *Repository) PostContact(w http.ResponseWriter, r *http.Request) {
 	}
 	contact := models.Contact{
 		Name:    r.Form.Get("name"),
+		Title:   r.Form.Get("title"),
 		Company: r.Form.Get("company"),
 		Email:   r.Form.Get("email"),
 		Phone:   r.Form.Get("phone"),

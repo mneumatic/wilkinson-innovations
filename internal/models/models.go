@@ -34,6 +34,7 @@ type Testimonial struct {
 
 type Contact struct {
 	Name    string
+	Title   string
 	Company string
 	Email   string
 	Phone   string

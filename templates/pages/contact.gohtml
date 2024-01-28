@@ -29,12 +29,19 @@
             <form action="" method="POST" novalidate>
               <input type="hidden" name="csrf_token" value="{{.CSRFToken}}">
 
-              <div class="flex flex-col">
+              <div class="flex flex-col text-start">
 
-                <div class="flex flex-col">
-                  <label for="name">Name: {{with .Form.Errors.Get "name"}}<span class="text-red-600">{{.}}{{end}}</span></label>
-                  <input id="name" type="text" class="p-2 mb-2 rounded border w-full md:w-1/2" autocomplete="off" name="name" value="{{$contact.Name}}" required>
+                <div class="flex flex-col justify-between md:flex-row md:w-1/2">
+                  <div class="flex flex-col">
+                    <label for="name">Name: {{with .Form.Errors.Get "name"}}<span class="text-red-600">{{.}}{{end}}</span></label>
+                    <input id="name" type="text" class="p-2 mb-2 rounded border md:w-[370px]" autocomplete="off" name="name" value="{{$contact.Name}}" required>
+                  </div>
+                  <div class="flex flex-col">
+                    <label for="title">Title <span class="text-[--secondary-color]">(Optional)</span>: {{with .Form.Errors.Get "title"}}<span class="text-red-600">{{.}}{{end}}</span></label>
+                    <input id="tile" type="text" class="p-2 mb-2 rounded border md:w-[370px]" autocomplete="off" name="name" value="{{$contact.Title}}" required>
+                  </div>
                 </div>
+
                 <div class="flex flex-col">
                   <label for="company">Company <span class="text-[--secondary-color]">(Optional)</span>: {{with .Form.Errors.Get "company"}}<span class="text-red-600">{{.}}{{end}}</span></label>
                   <input id="company" type="text" class="p-2 mb-2 rounded border w-full md:w-1/2" autocomplete="off" name="company" value="{{$contact.Company}}">
