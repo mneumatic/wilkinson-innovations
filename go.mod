@@ -1,6 +1,6 @@
 module github.com/mneumantic/wilkinson-innovations
 
-go 1.20
+go 1.21
 
 require (
 	github.com/alexedwards/scs/v2 v2.7.0
