@@ -15,15 +15,15 @@
 {{define "content"}}
   <main>
     <section id="hero" class="relative py-20">
-      <div class="container flex flex-col md:grid grid-cols-2">
-        <div class="flex items-center justify-center">
-          <img src="/public/img/product-img.png" alt="Medical Cart">
-        </div>
+      <div class="container flex flex-col flex-col-reverse  md:grid grid-cols-2">
         <div class="py-16 text-center lg:text-start">
           <h1 class="font-bold min-[320px]:text-xl min-[375px]:text-2xl min-[414px]:text-3xl md:text-5xl lg:text-6xl xl-[1500px]:text-7xl]">Strive for the Best.<span class="block">Continue to <span class="text-[var(--secondary-color)]">Innovate.</span></span></h1>
           <span class="font-light italic">That’s our path. That’s our mission for you.</span>
           <p class="py-16 text-3xl text-start font-light">Introducing the <strong class="text-[var(--secondary-color)]">All-In-One Deluxe Dialysis Medical Cart.</strong> We have engineered one of the most reliable, affordable, high quality medical dailysis carts on the market.</p>
           <button class="inline-block mb-4 md:mb-0 px-4 py-2 bg-[var(--secondary-color)] text-white rounded border hover:bg-transparent hover:border-[var(--secondary-color)] hover:text-[var(--tertiary-color)] transition-all" onclick="learnMore()">Learn More</button>
+        </div>
+        <div class="flex items-center justify-center">
+          <img src="/public/img/large-chart/large-chart-img-1.webp" alt="Medical Cart">
         </div>
       </div>
     </section>
@@ -152,7 +152,7 @@
             {{range .Products}}
               <div class="slide hidden fade">
                 <span class="absolute top-0 right-0 text-[var(--secondary-color)] text-[12px] py-2 px-3">{{.Id}} / 3</span>
-                <img class="w-full" src="/public/img/{{.ImgFile}}" alt="{{.Caption}}">
+                <img class="w-full" src="/public/img/large-chart/{{.ImgFile}}" alt="{{.Caption}}">
                 <span class="absolute bottom-2 text-[var(--secondary-color)] text-xs sm:text-lg w-full text-center">{{.Caption}}</span>
               </div>
             {{end}}
@@ -160,6 +160,7 @@
             <button class="next gallery-btn absolute right-0 top-2/4 w-auto p-4 -mt-6 bg-[var(--secondary-color)] border border-[var(--secondary-color)] text-white font-bold text-xs sm:text-lg transition-all rounded hover:bg-white hover:text-[var(--tertiary-color)]">❯</button>
           </div>
           <div class="text-center">
+            <span class="dot inline-block cursor-pointer h-4 w-4 mx-[2px] bg-[#bbb] rounded-full transition-all hover:bg-[#717171]"></span>
             <span class="dot inline-block cursor-pointer h-4 w-4 mx-[2px] bg-[#bbb] rounded-full transition-all hover:bg-[#717171]"></span>
             <span class="dot inline-block cursor-pointer h-4 w-4 mx-[2px] bg-[#bbb] rounded-full transition-all hover:bg-[#717171]"></span>
             <span class="dot inline-block cursor-pointer h-4 w-4 mx-[2px] bg-[#bbb] rounded-full transition-all hover:bg-[#717171]"></span>
@@ -189,7 +190,7 @@
         <div class="flex flex-col items-center md:flex-row md:justify-around py-16">
           <div class="flex flex-col" style="width: 350px">
             <div class="rounded overflow-hidden bg-gray-100">
-              <img class="img-fluid p-7" src="/public/img/product-img.png" alt="Product">
+              <img class="img-fluid p-7" src="/public/img/large-chart/large-chart-img-1.webp" alt="Product">
               <div class="flex flex-col p-4 bg-[var(--secondary-color)] text-[var(--primary-color)] text-right">
                 <span class="text-lg"><strong>$2,500.00</strong> <span class="text-xs font-thin">USD</span></span>
                 <span class="text-xs font-thin">Or $X amount of payments of $X</span>
@@ -221,7 +222,7 @@
 
           <div class="flex flex-col pt-16 md:pt-0" style="width: 350px">
             <div class="rounded overflow-hidden bg-gray-100">
-              <img class="img-fluid p-7" src="/public/img/product-img.png" alt="Product">
+              <img class="img-fluid p-7" src="/public/img/product-img-1.png" alt="Product">
               <div class="flex flex-col p-4 bg-[var(--secondary-color)] text-[var(--primary-color)] text-right">
                 <span class="text-lg"><strong>$3,000.00</strong> <span class="text-xs font-thin">USD</span></span>
                 <span class="text-xs font-thin">Or $X amount of payments of $X</span>
@@ -254,7 +255,7 @@
 
           <div class="flex flex-col pt-16 md:pt-0" style="width: 350px">
             <div class="rounded overflow-hidden bg-gray-100">
-              <img class="img-fluid p-7" src="/public/img/product-img.png" alt="Product">
+              <img class="img-fluid p-7" src="/public/img/product-img-1.png" alt="Product">
               <div class="flex flex-col p-4 bg-[var(--secondary-color)] text-[var(--primary-color)] text-right">
                 <span class="text-lg"><strong>$3,500.00</strong> <span class="text-xs font-thin">USD</span></span>
                 <span class="text-xs font-thin">Or $X amount of payments of $X</span>
