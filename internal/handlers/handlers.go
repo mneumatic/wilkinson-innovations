@@ -32,15 +32,8 @@ func (m *Repository) Home(w http.ResponseWriter, r *http.Request) {
 	render.RenderTemplate(w, r, "index.gohtml", &models.Template{
 		Title:      "Wilkinson Innovations",
 		Production: m.App.Production,
-		Other:      m.App.Testimonials,
-		Products:   m.App.Products,
-	})
-}
-
-func (m *Repository) About(w http.ResponseWriter, r *http.Request) {
-	render.RenderTemplate(w, r, "about.gohtml", &models.Template{
-		Title:      "About | Wilkinson Innovations",
-		Production: m.App.Production,
+		//Other:      m.App.Testimonials,
+		Products: m.App.Products,
 	})
 }
 

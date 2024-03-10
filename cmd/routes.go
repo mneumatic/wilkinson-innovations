@@ -19,7 +19,6 @@ func routes(app *config.AppConfig) http.Handler {
 	mux.Use(SessionLoad)
 
 	mux.Get("/", handlers.Repo.Home)
-	mux.Get("/about", handlers.Repo.About)
 	mux.Get("/order", handlers.Repo.Order)
 	mux.Get("/contact", handlers.Repo.Contact)
 	mux.Post("/contact", handlers.Repo.PostContact)

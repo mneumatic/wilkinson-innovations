@@ -1,0 +1,30 @@
+<section class="py-20 bg-[var(--secondary-color)]">
+    <div class="container flex flex-col md:grid grid-rows-2 md:h-40 text-white">
+        <div class="row-start-1 row-auto">
+            <header class="text-white text-center">
+                <h2 class="text-center md:text-end font-bold min-[320px]:text-xl min-[375px]:text-2xl text-3xl">What Our Customers Say About Us!</h2>
+            </header>
+        </div>
+        <div class="relative row-start-2 flex flex-col md:flex-row items-center md:justify-end">
+            {{range .Other}}
+            <div class="testimonial hidden fade flex flex-col-reverse md:flex-row items-center justify-end text-end pt-4 md:pt-0 transition-all">
+                <div class="md:w-1/2">
+                    <p><em>"{{.Quote}}"</em></p>
+                    <span>- {{.Name}}</span>
+                </div>
+                <div class="md:inline-block overflow-hidden mb-4 md:mb-0 md:mx-8">
+                    <img class="rounded" width="199" height="133" src="/public/img/{{.ImgFile}}" alt="{{.ImgAlt}}">
+                </div>
+            </div>
+            {{end}}
+            <div class="testimonial-btns flex md:flex-col items-center pt-8 md:pt-0 md:pl-2">
+                <button class="border rounded border-white flex items-center text-white mx-2 md:mx-0 md:mb-3 p-4 transition-all">
+                    <svg class="-rotate-90 md:rotate-0 transition-all" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"/></svg>
+                </button>
+                <button class="border rounded border-white flex items-center text-white mx-2 md:mx-0 p-4 transition-all">
+                    <svg class="-rotate-90 md:rotate-0 transition-all" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>

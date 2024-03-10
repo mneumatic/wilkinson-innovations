@@ -3,13 +3,13 @@
   const slides = document.querySelectorAll(".slide")
   const dots = document.querySelectorAll(".dot")
 
-  const testimonials = document.querySelectorAll('.testimonial')
-  const testimonialBtns = document.querySelectorAll('.testimonial-btns button')
+  // const testimonials = document.querySelectorAll('.testimonial')
+  // const testimonialBtns = document.querySelectorAll('.testimonial-btns button')
 
   let imgCurrent = 0
   let testimonialCurrent = 0
 
-  testimonials[testimonialCurrent].classList.remove('hidden')
+  // testimonials[testimonialCurrent].classList.remove('hidden')
 
   slides[imgCurrent].classList.remove('hidden')
   dots[imgCurrent].classList.add('active-dot')
@@ -49,8 +49,8 @@
     }
   }
 
-  testimonialBtns[0].addEventListener('click', () => { move(-1, testimonials, testimonialCurrent, "testimonial") })
-  testimonialBtns[1].addEventListener('click', () => { move(1, testimonials, testimonialCurrent, "testimonial") })
+  // testimonialBtns[0].addEventListener('click', () => { move(-1, testimonials, testimonialCurrent, "testimonial") })
+  // testimonialBtns[1].addEventListener('click', () => { move(1, testimonials, testimonialCurrent, "testimonial") })
 
   btns[0].addEventListener('click', () => { move(-1, slides, imgCurrent, "slides") }) // prev
   btns[1].addEventListener('click', () => { move(1, slides, imgCurrent, "slides") }) // next
