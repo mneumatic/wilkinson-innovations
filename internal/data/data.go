@@ -33,12 +33,12 @@ func ProductData() []models.Product {
 	return []models.Product{
 		{
 			Id:      "1",
-			ImgFile: "large-chart-img-1.webp",
+			ImgFile: "large-chart-img-1@600.webp",
 			Caption: "Front Right Side",
 		},
 		{
 			Id:      "2",
-			ImgFile: "product-img-2.png",
+			ImgFile: "large-chart-img-2@600.webp",
 			Caption: "Back Right Side",
 		},
 		{

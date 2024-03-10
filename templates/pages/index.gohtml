@@ -23,7 +23,7 @@
           <button class="inline-block mb-4 md:mb-0 px-4 py-2 bg-[var(--secondary-color)] text-white rounded border hover:bg-transparent hover:border-[var(--secondary-color)] hover:text-[var(--tertiary-color)] transition-all" onclick="learnMore()">Learn More</button>
         </div>
         <div class="flex items-center justify-center">
-          <img src="/public/img/large-chart/large-chart-img-1.webp" alt="Medical Cart">
+          <img src="/public/img/large-chart/large-chart-img-1@600.webp" alt="Medical Cart">
         </div>
       </div>
     </section>
@@ -150,9 +150,11 @@
         <div class="col-span-2 pt-8 md:pt-0">
           <div class="relative m-auto max-w-[1000px]">
             {{range .Products}}
-              <div class="slide hidden fade">
+              <div class="slide hidden fade" style="max-height: 600px">
                 <span class="absolute top-0 right-0 text-[var(--secondary-color)] text-[12px] py-2 px-3">{{.Id}} / 3</span>
-                <img class="w-full" src="/public/img/large-chart/{{.ImgFile}}" alt="{{.Caption}}">
+                <div class="flex items-center justify-center">
+                  <img src="/public/img/large-chart/{{.ImgFile}}" alt="{{.Caption}}">
+                </div>
                 <span class="absolute bottom-2 text-[var(--secondary-color)] text-xs sm:text-lg w-full text-center">{{.Caption}}</span>
               </div>
             {{end}}
